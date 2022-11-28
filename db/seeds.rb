@@ -12,12 +12,20 @@ ServiceHistory.destroy_all
 
 puts "seeding..."
 
-user = User.create(
+User.create(
   email: "test@email.com",
   password: "secret",
-  first_name: "steve",
-  last_name: "house",
-  address: "Richmond, Melbourne, Victoria, 3121"
+  first_name: "Chris",
+  last_name: "Shaw",
+  address: "10 Bridge Road, Richmond, Victoria, 3121"
+)
+
+User.create(
+  email: "garage@email.com",
+  password: "secret",
+  first_name: "Mike",
+  last_name: "Haigh",
+  address: "10 Bridge Road, Richmond, Victoria, 3121"
 )
 
 Car.create(
@@ -25,7 +33,22 @@ Car.create(
   model: "A3",
   year: "2020",
   kilometers: "30000",
-  user: user
+  user_id: 1
+)
+
+Booking.create(
+  car_id: 1,
+  garage_id: 1
+)
+
+Garage.create(
+  name: "Torque and Spanners",
+  address: "7 Stewart Street, Richmond, Victoria, 3121",
+  user_id: 2
+)
+
+ServiceHistory.create(
+  booking_id: 1
 )
 
 puts "seeding completed"
