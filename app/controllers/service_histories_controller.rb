@@ -3,7 +3,6 @@ class ServiceHistoriesController < ApplicationController
     @service_histories = Service_history.all
   end
 
-  def
 end
 
 # Create

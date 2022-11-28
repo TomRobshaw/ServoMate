@@ -2,15 +2,15 @@ class GaragesController < ApplicationController
   # value
   # status
   def new
-    @garage = garage.new
+    @garage = Garage.new
   end
 
   def edit
-    @garage = garage.find(params[:id])
+    @garage = Garage.find(params[:id])
   end
 
   def update
-    @garage = garage.find(params[:id])
+    @garage = Garage.find(params[:id])
     # @garage = garage.save
     respond_to do |format|
       if @garage.update(garage_params)
@@ -24,7 +24,7 @@ class GaragesController < ApplicationController
   end
 
   def index
-    @garages = garage.all
+    @garages = Garage.all
   end
 
   def create
