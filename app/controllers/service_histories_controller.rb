@@ -1,0 +1,2 @@
+class ServiceHistoriesController < ApplicationController
+end
