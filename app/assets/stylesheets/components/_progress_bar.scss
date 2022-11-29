@@ -1,0 +1,19 @@
+.progress-bar {
+  background-color: #1a1a1a;
+  height: 45px;
+  width: 450px;
+  margin: 50px auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+}
+
+.progress-bar-inner {
+  display: block;
+  height: 45px;
+  width: 0%;
+  background-color: #34c2e3;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+  // position: relative;
+  animation: auto-progress 10s infinite linear;
+}

@@ -1,5 +1,4 @@
 class CarsController < ApplicationController
-  class ListingsController < ApplicationController
     before_action :set_car, only: %i[show edit update destroy]
     def index
       @cars = Car.all
@@ -42,5 +41,4 @@ class CarsController < ApplicationController
     def car_params
       params.require(:car).permit(:make, :model, :year, :price, :kilometers)
     end
-  end
 end
