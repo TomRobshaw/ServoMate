@@ -1,2 +1,11 @@
-<h1>Individial garage show page</h1>
-<%= @garage.name %>
+
+<div class style ="card" style="card-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); border-radius: 4px; border-style: solid; border-width: 4px; border-style: solid; border-color: black; display: inline-flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
+  <%#= cl_image_tag listing.image.key, crop: :fill,  style: "width: 100%; height: 216px; border-radius: 8px;"%>
+  <div class style ="listing-info border-color: black; border-style: solid;">
+    <div class="listing-content" style ="width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
+      <p class style ="width: 100%; font-size: 24px; font-weight: 600; line-height: 20px; color: black;"><%= @garage.name %></p>
+      <p class style ="width: 100%; font-size: 16px; font-weight: 400; line-height: 20px; color: black;"><%= @garage.address %></p>
+      <p class style ="width: 100%; font-size: 18px; font-weight: 400; line-height: 20px; color: black;"><h5>Chat with</h5><%= @garage.user.first_name %></p>
+    </div>
+  </div>
+</div>
