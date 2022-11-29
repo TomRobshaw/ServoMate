@@ -1,21 +1,26 @@
 <h1>Garage index page<h1>
-
-<div class="flex-container ">
-  <%= form_with url: garages_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a garage"%>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-</div>
-
-<h3 class="mb-4">Pick a garage</h3>
-
+<div class="container">
   <div class="row">
-    <% @garages[0..2].each do |garage| %>
-      <div class="col-12 col-md-6 col-lg-4 pb-4">
-        <%= render garage %>
+    <div class="col">
+      <h1 class="h2 my-3 d-flex justify-content-center">Garages near by 🚘</h1>
+
+      <div>
+        <%= form_with url: garages_path, method: :get, html: {class: "mb-4", data: { turbo_frame:"search_results"}} do |f| %>
+          <%= f.label "find a garage" %>
+          <%= f.text_field :query,
+                           class: "form-control",
+                           value: params[:query],
+                           data: {
+                              controller: "auto-submit",
+                              action: "keyup->auto-submit#submitForm"
+                            }
+                           %>
+        <% end %>
+
+        <%= turbo_frame_tag "search_results" do %>
+          <%= render :partial => "garage", :collection => @garages, :as => :garage %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
+</div>
