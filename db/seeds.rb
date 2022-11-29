@@ -3,6 +3,7 @@ Booking.destroy_all
 Garage.destroy_all
 Car.destroy_all
 User.destroy_all
+Chatroom.destroy_all
 
 puts "seeding..."
 
@@ -34,7 +35,7 @@ chris_car = Car.create!(
 
 puts "car created"
 
-first_garage = Garage.create(
+@new_garage = Garage.create(
   name: "Torque and Spanners",
   address: "7 Stewart Street, Richmond, Victoria, 3121",
   user: mike
@@ -42,15 +43,111 @@ first_garage = Garage.create(
 
 puts "garage created"
 
+@new_garage = Garage.create(
+  name: "The Vroom Vroom Car Room",
+  address: "88 Firebell Ln, Richmond VIC 3121",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Dodgy Daves Quick Fix Garage",
+  address: "7 Stewart Street, Richmond, Victoria, 3121",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Car Hooraah",
+  address: "14 McCrae Mews, Richmond VIC 3121",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Oiled up Machanics",
+  address: "1A Gordon Grove, South Yarra VIC 3141",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Take a Brakes Garage",
+  address: "14 Mary St, Richmond VIC 3121",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Hash Tag just Filters Garage",
+  address: "53 Surrey Rd, South Yarra VIC 3141",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Nut And Bolt Machanics",
+  address: "11 Cunningham St, South Yarra VIC 3141",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Mind Over Motor Garage",
+  address: "113 Richmond Terrace, Richmond VIC 3121
+
+  ",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Mario Car repair",
+  address: "100 Lennox St, Richmond VIC 3121",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Wheel Be Alright Auto Shop",
+  address: "29 Cromwell St, Collingwood VIC 3066",
+  user: mike
+)
+
+puts "garage created"
+
+@new_garage = Garage.create(
+  name: "Spanner In The Works",
+  address: "30 Vaughan Cres, Kew VIC 3101",
+  user: mike
+)
+
+puts "garage created"
+
 first_booking = Booking.create(
   car: chris_car,
-  garage: first_garage
+  garage: @new_garage
 )
 
 puts "booking created"
 
 ServiceHistory.create(
-  booking: first_booking
+  booking: first_booking,
+  date: "30.11.2022",
+  description: "Annual service"
+)
+
+Chatroom.create(
+  name: "chat"
 )
 
 puts "seeding completed"
