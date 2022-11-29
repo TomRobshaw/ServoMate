@@ -23,7 +23,7 @@ User.create(
 
 puts "users created"
 
-Car.create(
+Car.create!(
   make: "Audi",
   model: "A3",
   year: "2020",

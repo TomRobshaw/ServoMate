@@ -2,11 +2,7 @@ class CarsController < ApplicationController
   class ListingsController < ApplicationController
     before_action :set_car, only: %i[show edit update destroy]
     def index
-      if params[:query].present?
-        @cars = Car.search_by_title_and_by_location(params[:query])
-      else
-        @cars = Car.all
-      end
+      @cars = Car.all
     end
 
     def change_status

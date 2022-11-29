@@ -1,6 +1,4 @@
 class GaragesController < ApplicationController
-  # value
-  # status
   def new
     @garage = Garage.new
   end
