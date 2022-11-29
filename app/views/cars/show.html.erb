@@ -1,57 +1,36 @@
 
-  <h2>Car show</h2>
-  <div>
-  <%# Car show page is our dashnboard where users come to view,update cars and navigate to other sections of the page %>
-
-  <%# Nav bar goes here  %>
-
-  <%# Title of Dashboard  %>
+<%# Nav bar goes here  %>
+<div class="continer">
+  <h1>Car show page</h1>
   <div class="container">
-    <h1>Dashboard </h1>
+    <h2>Name of Car</h2>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8amVlcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60" alt=" This is an image of your car">
+    </div>
+    <div>
+      <div class="progress-bar-container">
+        <div class="progress-bar stripes">
+          <span class="progress-bar-inner"></span>
+        </div>
+        <div class="progress-bar stripes animated reverse slower">
+          <p> Oil and filter</p>
+          <span class="progress-bar-inner"></span>
+        </div>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar stripes">
+          <p>Spark plug and ignition</p>
+          <span class="progress-bar-inner"></span>
+        </div>
+        <div class="progress-bar stripes animated reverse slower">
+          <p>Tyres</p>
+          <span class="progress-bar-inner"></span>
+        </div>
+      </div>
+    </div>
 
-    <%# Is there a way to grab username when they sign in.  %>
-    <h2>Welcome back John</h2>
-    <p>What would like to today?</p>
-    <button> View Service History</button>
-    <button>Make a booking</button>
-
-    <%# Car information  %>
-
-    <%# Car cards %>
-    <div class="container">
-      <h3>Your Cars</h3>
-      <ul class="cards">
-        <li class="card">
-          <h3 class="card-title">Car Make</h3>
-          <div class="card-content">
-            <p>Car Model</p>
-            <p>Build year</p>
-            <p>Kms of car</p>
-          </div>
-          <div>
-            <button class="card-link-wrapper">View Car</button>
-            <a href="#" class="card-link">Service History</a>
-          </div>
-        </li>
-      </ul>
+    <div>
+      <a href="#" class="btn btn-primary">Book a service</a>
     </div>
   </div>
 </div>
-
-
-
-<%#
-</div>
-<div class="container">
-  <h2>Scrolling Card UI With CSS Grid</h2>
-  <ul class="cards">
-    <li class="card">
-      <div>
-        <h3 class="card-title">Service 1</h3>
-        <div class="card-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div> %>
