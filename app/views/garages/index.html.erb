@@ -1,1 +1,21 @@
 <h1>Garage index page<h1>
+
+<div class="flex-container ">
+  <%= form_with url: garages_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a garage"%>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<h3 class="mb-4">Pick a garage</h3>
+
+  <div class="row">
+    <% @garages[0..2].each do |garage| %>
+      <div class="col-12 col-md-6 col-lg-4 pb-4">
+        <%= render garage %>
+      </div>
+    <% end %>
+  </div>
