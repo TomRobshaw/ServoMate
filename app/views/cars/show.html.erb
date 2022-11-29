@@ -1,10 +1,12 @@
-<h2>Car Show Page</h2>
-<%# Car show page is our dashnboard where users come to view,update cars and navigate to other sections of the page %>
 
-<%# Nav bar goes here  %>
+  <h2>Car show</h2>
+  <div>
+  <%# Car show page is our dashnboard where users come to view,update cars and navigate to other sections of the page %>
 
-<%# Title of Dashboard  %>
-<div class="container">
+  <%# Nav bar goes here  %>
+
+  <%# Title of Dashboard  %>
+  <div class="container">
     <h1>Dashboard </h1>
 
     <%# Is there a way to grab username when they sign in.  %>
@@ -14,18 +16,42 @@
     <button>Make a booking</button>
 
     <%# Car information  %>
-    <h3>Your Cars</h3>
 
     <%# Car cards %>
-    <p>Car Make title</p>
-    <p>Car Model</p>
-    <p>Build year</p>
-    <p>Kms of car</p>
-    <button>View Car</button>
-    <a href="#">Service History</a>
-
-
-
-
-
+    <div class="container">
+      <h3>Your Cars</h3>
+      <ul class="cards">
+        <li class="card">
+          <h3 class="card-title">Car Make</h3>
+          <div class="card-content">
+            <p>Car Model</p>
+            <p>Build year</p>
+            <p>Kms of car</p>
+          </div>
+          <div>
+            <button class="card-link-wrapper">View Car</button>
+            <a href="#" class="card-link">Service History</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
+
+
+
+<%#
+</div>
+<div class="container">
+  <h2>Scrolling Card UI With CSS Grid</h2>
+  <ul class="cards">
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 1</h3>
+        <div class="card-content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div> %>

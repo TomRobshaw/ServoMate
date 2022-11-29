@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "spark_plugs_and_ignition", to: "cars#spark_plugs_and_ignition"
   get "brakes", to: "cars#brakes"
 
+
   # Defines the root path route ("/")
   # root "articles#index"
   resources :cars, only: [:index, :new, :create, :show]

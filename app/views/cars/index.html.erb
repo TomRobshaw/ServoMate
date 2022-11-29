@@ -20,11 +20,50 @@
                   <h4 class="card-title"><strong><%= car.make %></strong></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.model %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.year %></h6>
-                  <p class="card-text"> <strong><%= car.round(0) %>Kms</strong></p>
+                  <p class="card-text"> <strong><%= car.kilometers %>Kms</strong></p>
                   <%= link_to  "Car Home", car, class:"btn btn-primary" %>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
+<%#
+<h2>Car show</h2>
+  <div>
+  <%# Car show page is our dashnboard where users come to view,update cars and navigate to other sections of the page %>
+
+  <%# Nav bar goes here  %>
+
+  <%# Title of Dashboard  %>
+  <%# <div class="container">
+    <h1>Dashboard </h1> %>
+
+    <%# Is there a way to grab username when they sign in.  %>
+    <%# <h2>Welcome back John</h2>
+    <p>What would like to today?</p>
+    <button> View Service History</button>
+    <button>Make a booking</button> %>
+
+    <%# Car information  %>
+
+    <%# Car cards %>
+    <%# <div class="container">
+      <h3>Your Cars</h3>
+      <ul class="cards">
+        <li class="card">
+          <h3 class="card-title">Car Make</h3>
+          <div class="card-content">
+            <p>Car Model</p>
+            <p>Build year</p>
+            <p>Kms of car</p>
+          </div>
+          <div>
+            <button class="card-link-wrapper">View Car</button>
+            <a href="#" class="card-link">Service History</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> %> %>
