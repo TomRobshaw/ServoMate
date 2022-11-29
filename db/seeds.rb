@@ -3,6 +3,7 @@ Booking.destroy_all
 Garage.destroy_all
 Car.destroy_all
 User.destroy_all
+Chatroom.destroy_all
 
 puts "seeding..."
 
@@ -53,6 +54,10 @@ ServiceHistory.create(
   booking: first_booking,
   date: "30.11.2022",
   description: "Annual service"
+)
+
+Chatroom.create(
+  name: "chat"
 )
 
 puts "seeding completed"
