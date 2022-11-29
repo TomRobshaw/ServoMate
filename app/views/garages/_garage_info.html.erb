@@ -1,0 +1,13 @@
+<div class="garage-card">
+  <%#= image_tag garage.image_url %>
+
+  <div class="garage-info">
+    <%= turbo_frame_tag dom_id(garages) do %>
+      <h2><%= @garage.name %></h2>
+      <h2><%= @garage.address %></h2>
+      <%= link_to garages_path(garages) do %>
+        <i class="fa-solid fa-circle-check"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
