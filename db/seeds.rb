@@ -1,11 +1,12 @@
-Car.destroy_all
+ServiceHistory.destroy_all
 Booking.destroy_all
 Garage.destroy_all
-ServiceHistory.destroy_all
+Car.destroy_all
+User.destroy_all
 
 puts "seeding..."
 
-User.create(
+chris = User.create(
   email: "test@email.com",
   password: "secret",
   first_name: "Chris",
@@ -13,7 +14,7 @@ User.create(
   address: "10 Bridge Road, Richmond, Victoria, 3121"
 )
 
-User.create(
+mike = User.create(
   email: "garage@email.com",
   password: "secret",
   first_name: "Mike",
@@ -23,33 +24,33 @@ User.create(
 
 puts "users created"
 
-Car.create!(
+chris_car = Car.create!(
   make: "Audi",
   model: "A3",
   year: "2020",
   kilometers: "30000",
-  user_id: 1
+  user: chris
 )
 
 puts "car created"
 
-Garage.create(
+first_garage = Garage.create(
   name: "Torque and Spanners",
   address: "7 Stewart Street, Richmond, Victoria, 3121",
-  user_id: 2
+  user: mike
 )
 
 puts "garage created"
 
-Booking.create(
-  car_id: 1,
-  garage_id: 1
+first_booking = Booking.create(
+  car: chris_car,
+  garage: first_garage
 )
 
 puts "booking created"
 
-# ServiceHistory.create(
-#   booking_id: 1
-# )
+ServiceHistory.create(
+  booking: first_booking
+)
 
 puts "seeding completed"
