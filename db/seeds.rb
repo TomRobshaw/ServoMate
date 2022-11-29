@@ -50,7 +50,9 @@ first_booking = Booking.create(
 puts "booking created"
 
 ServiceHistory.create(
-  booking: first_booking
+  booking: first_booking,
+  date: "30.11.2022",
+  description: "Annual service"
 )
 
 puts "seeding completed"

@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :new, :create, :show]
   resources :bookings, only: [:new, :index, :show, :create]
   resources :garages, only: [:new, :index, :show]
-  resources :service_histories, only: [:index, :show]
+  resources :service_histories, only: [:index, :show, :new, :create]
 
 end
