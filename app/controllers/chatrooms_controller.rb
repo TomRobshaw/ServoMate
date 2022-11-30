@@ -3,4 +3,6 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     @chatroom = params[:id]
   end
+
+
 end

@@ -37,8 +37,8 @@ puts "car created"
 
 new_garage2 = Garage.create(
   name: "Torque and Spanners",
-  address: "7 Stewart Street, Richmond, Victoria, 3121",
-  user: mike
+  address: "7 Stewart Place, Richmond, Victoria, 3121",
+  user: mike,
 )
 
 puts "garage created"
