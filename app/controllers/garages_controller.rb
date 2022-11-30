@@ -41,6 +41,7 @@ class GaragesController < ApplicationController
 
   def show
     @garage = Garage.find(params[:id])
+    @chatroom = Chatroom.where(garage: @garage, user: current_user)
     # @listing = Listing.find(params[:id])
     # @garage.listing = @garage
   end

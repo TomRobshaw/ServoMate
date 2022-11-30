@@ -35,7 +35,7 @@ chris_car = Car.create!(
 
 puts "car created"
 
-@new_garage = Garage.create(
+new_garage2 = Garage.create(
   name: "Torque and Spanners",
   address: "7 Stewart Street, Richmond, Victoria, 3121",
   user: mike
@@ -43,7 +43,7 @@ puts "car created"
 
 puts "garage created"
 
-@new_garage = Garage.create(
+new_garage1 = Garage.create(
   name: "The Vroom Vroom Car Room",
   address: "88 Firebell Ln, Richmond VIC 3121",
   user: mike
@@ -147,7 +147,15 @@ ServiceHistory.create(
 )
 
 Chatroom.create(
-  name: "chat"
+  name: "chat",
+  user_id: 3,
+  garage_id: 13
+)
+
+Chatroom.create(
+  name: "chat",
+  user: chris,
+  garage: new_garage2
 )
 
 puts "seeding completed"
