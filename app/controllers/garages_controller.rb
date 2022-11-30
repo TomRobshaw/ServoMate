@@ -27,6 +27,14 @@ class GaragesController < ApplicationController
     if params[:query].present?
       @garages = @garages.where("name ILIKE ?", "%#{params[:query]}%")
     end
+    @markers = @garages.geocoded.map do |garage|
+      {
+        lat: garage.latitude,
+        lng: garage.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {garage: garage}),
+        image_url: helpers.asset_url("Workshop-21")
+      }
+    end
   end
 
   def create
@@ -55,6 +63,6 @@ class GaragesController < ApplicationController
 
   # private params need work and need to find out why views arnt auto populating
   def garage_params
-    params.require(:garage).permit(:name, :address)
+    params.require(:garage).permit(:name, :address, :latitude, :longitude)
   end
 end
