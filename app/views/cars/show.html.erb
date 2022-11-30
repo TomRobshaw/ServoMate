@@ -1,6 +1,6 @@
 
 <%# Nav bar goes here  %>
-<div class="continer">
+<div class="container">
   <div class="contiainer">
     <h1>Car show page</h1>
     <h2>Name of Car</h2>
@@ -8,21 +8,75 @@
       <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8amVlcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60" alt=" This is an image of your car">
     </div>
 
-    <div class="container m-4">
+    <%# Peogress bars of each car part %>
+  <div class="container m-4">
 
-      <div class="progress m-4" style="height: 40px;">
-        <div class="progress-bar w-75" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 75%</div>
-      </div>
-      <div class="progress m-4" style="height: 40px;">
+    <%# Progress bar 1 %>
+    <div class="container p-4" style="background-color: white;">
+      <div class="progress" style="height: 40px;">
         <div class="progress-bar w-25" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 25%</div>
       </div>
-      <div class="progress m-4" style="height: 40px;">
+      <p>
+        <button class="btn btn-secondary-outline" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Tyres
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+      </div>
+    </div>
+
+    <%# Progress bar 2 %>
+    <div class="container p-4" style="background-color: white;">
+      <div class="progress" style="height: 40px;">
         <div class="progress-bar w-50" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 50%</div>
       </div>
-      <div class="progress m-4" style="height: 40px;">
-        <div class="progress-bar w-100" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 100%</div>
+      <p>
+        <button class="btn btn-secondary-outline" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Brakes
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample2">
+        <div class="card card-body">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
       </div>
-         <a href="#" class="btn btn-primary">Book a service</a>
+    </div>
+
+    <%# Progress bar 3 %>
+    <div class="container p-4" style="background-color: white;">
+      <div class="progress" style="height: 40px;">
+        <div class="progress-bar w-25" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 75%</div>
+      </div>
+      <p>
+        <button class="btn btn-secondary-outline" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Sparksm plugs and ignition
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+      </div>
+    </div>
+
+    <%# Progress bar 4 %>
+    <div class="container p-4" style="background-color: white;">
+      <div class="progress" style="height: 40px;">
+        <div class="progress-bar w-25" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 25%</div>
+      </div>
+      <p>
+        <button class="btn btn-secondary-outline" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Oil and filter
+        </button>
+      </p>
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+      </div>
     </div>
   </div>
 </div>
