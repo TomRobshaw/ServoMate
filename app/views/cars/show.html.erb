@@ -43,7 +43,9 @@
         </div>
       </div>
     <div>
-      <a href="#" class="btn btn-primary">Book a service</a>
+      <button class="btn btn-primary, color: white;"><%=link_to "Home", root_path(@root)%></button>
+      <button type="button" class="btn btn-primary, color: white;"><%=link_to "My Vehicles", cars_path(@cars)%></button>
+      <button type="button" class="btn btn-primary, color: white;"><%=link_to "Book a Service", garages_path(@garages)%></button>
     </div>
   </div>
 </div>

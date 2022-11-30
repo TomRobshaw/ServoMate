@@ -1,6 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-
+<button type="button" class="btn btn-primary, color: white;"><%=link_to "My Vehicles", cars_path(@cars)%></button>
+<button type="button" class="btn btn-primary, color: white;"><%=link_to "Find A Garage", garages_path(@garages)%></button>
+<button type="button" class="btn btn-primary, color: white;"><%=link_to "Log Out", root_path(@root)%></button>
 <%# NavBar %>
 <%# Header %>
 <h1>Servomate</h1>
@@ -30,3 +32,4 @@
 
 
 <%# Footer %>
+
