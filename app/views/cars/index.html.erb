@@ -1,14 +1,14 @@
-<h2>Cars Index Page</h2>
+<h2>Servo-Mate</h2>
 
 <%# <h1 class="mb-4 mt-4 d-flex justify-content-start">Listings</h1> %>
 
   <hr size="2px" width="100%" color="gray">
     <div class="row justify-content-between">
         <div class="col-4">
-          <h3 class="mb-4"> My Cars</h3>
+          <h3 class="mb-4"> My Vehicles</h3>
         </div>
           <div class="col-4 d-flex justify-content-end">
-            <%= link_to "Add new car", new_car_path, class:"btn btn-primary add-list btn-md mb-4" %>
+            <%= link_to "Add Vehicle", new_car_path, class:"btn btn-primary add-list btn-md mb-4" %>
           </div>
     </div>
 
@@ -21,7 +21,7 @@
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.model %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.year %></h6>
                   <p class="card-text"> <strong><%= car.kilometers %>Kms</strong></p>
-                  <%= link_to  "Car Home", car, class:"btn btn-primary" %>
+                  <%= link_to  "Satus", car, class:"btn btn-primary" %>
                 </div>
           </div>
         </div>
@@ -66,4 +66,4 @@
       </ul>
     </div>
   </div>
-</div> %> %>
+</div> %>
