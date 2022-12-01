@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_234410) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_064307) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,8 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_234410) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "garage_id", null: false
+    t.bigint "user_id"
+    t.bigint "garage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -101,10 +101,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_234410) do
     t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "date"
     t.string "description"
     t.string "image"
+    t.bigint "car_id"
+    t.date "service_date"
     t.index ["booking_id"], name: "index_service_histories_on_booking_id"
+    t.index ["car_id"], name: "index_service_histories_on_car_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -134,4 +136,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_234410) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "service_histories", "bookings"
+  add_foreign_key "service_histories", "cars"
 end

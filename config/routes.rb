@@ -10,10 +10,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :cars, only: [:index, :new, :create, :show]
+  resources :cars, only: [:index, :new, :create, :show] do
+    resources :service_histories, only: [:new, :create]
+  end
   resources :bookings, only: [:new, :index, :show, :create]
   resources :garages, only: [:new, :index, :show]
-  resources :service_histories, only: [:index, :show, :new, :create]
+  resources :service_histories, only: [:index, :show]
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
