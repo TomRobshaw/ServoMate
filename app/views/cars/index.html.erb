@@ -21,7 +21,10 @@
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.model %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.year %></h6>
                   <p class="card-text"> <strong><%= car.kilometers %>Kms</strong></p>
-                  <%= link_to  "Satus", car, class:"btn btn-primary" %>
+                  <%= link_to "Status", car, class:"btn btn-primary" %>
+                  <%=link_to "New Service History", new_car_service_history_path(car), class:"btn btn-primary" %>
+
+                  <%=link_to "Service History", service_history_path(car), class:"btn btn-primary" %>
                 </div>
           </div>
         </div>

@@ -1,1 +1,6 @@
 <h1>Service history show page</h1>
+<% @service_histories.each do |service_history| %>
+  <%= service_history.description %>
+  <%= service_history.date %>
+  <%= service_history.image %>
+<% end %>

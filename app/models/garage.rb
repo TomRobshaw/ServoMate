@@ -1,7 +1,7 @@
 class Garage < ApplicationRecord
   belongs_to :user
-  has_many :bookings
-  has_many :chatrooms
+  has_many :bookings, dependent: :destroy
+  has_many :chatrooms, dependent: :destroy
   validates :name, presence: true
   validates :address, presence: true
 
