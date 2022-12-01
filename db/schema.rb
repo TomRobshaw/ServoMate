@@ -67,13 +67,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_234410) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "garage_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.index ["garage_id"], name: "index_chatrooms_on_garage_id"
-    t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
   create_table "garages", force: :cascade do |t|
@@ -128,8 +124,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_234410) do
   add_foreign_key "bookings", "cars"
   add_foreign_key "bookings", "garages"
   add_foreign_key "cars", "users"
-  add_foreign_key "chatrooms", "garages"
-  add_foreign_key "chatrooms", "users"
   add_foreign_key "garages", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
