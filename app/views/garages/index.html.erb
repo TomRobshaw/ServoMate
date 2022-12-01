@@ -6,7 +6,7 @@
       <h1 class="h2 my-3 d-flex justify-content-center">Garages near by 🚘</h1>
 
       <div>
-        <%= form_with url: garages_path, method: :get, html: {class: "mb-4", data: { turbo_frame:"search_results"}} do |f| %>
+        <%= form_with url: garages_path, method: :get, html: {class: "mb-4"} do |f| %>
               <button class="btn btn-primary, color: white;"><%=link_to "Home", root_path(@root)%></button>
           <%= f.label "find a garage" %>
               <button type="button" class="btn btn-primary, color: white;"><%=link_to "My Vehicles", cars_path(@cars)%></button>
