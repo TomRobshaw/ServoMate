@@ -2,10 +2,9 @@
 <%# Nav bar goes here  %>
 <div class="container">
   <div class="contiainer">
-    <h1>Car show page</h1>
-    <h2>Name of Car</h2>
+  <div><h1><%= @car.make %></h1><h2><%= @car.model%></h2></div>
     <div class="image">
-      <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8amVlcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60" alt=" This is an image of your car">
+      <%= cl_image_tag @car.image.key, crop: :fill, class:"card-img-top" %>
     </div>
       <%# progress bar container %>
 
@@ -22,7 +21,7 @@
         <h3 class="text-lg font-medium leading-6 text-gray-900">Last 30 days</h3>
 
         <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <% 3.times do %>
+          <%# <% 3.times do %>
             <%# CARD %>
             <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
               <div class="flex">
@@ -30,7 +29,51 @@
                   <div class="flex items-center justify-between">
                     <div class="space-y-0.5">
                       <p class="text-sm text-violet-500 font-medium mb-0">Tyres</p>
-                      <p class="text-2xl font-semibold text-gray-900">71,897</p>
+                      <p class="text-2xl font-semibold text-gray-900">71,897km</p>
+                    </div>
+                    <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+                        href="#">
+                      <span class="ml-2 inline no-underline">See more</span>
+                      <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div data-controller="progress" data-progress-percent-value="90" class="bg-violet-200 rounded-full w-full">
+                <div data-progress-target="bar"
+                      class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
+                      style="width: 0%; transition-duration: 2s;"></div>
+              </div>
+            </div>
+            <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
+              <div class="flex">
+                <div class="flex-grow-1 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="space-y-0.5">
+                      <p class="text-sm text-violet-500 font-medium mb-0">Spark Plugs & Ignition</p>
+                      <p class="text-2xl font-semibold text-gray-900">17,852km</p>
+                    </div>
+                    <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+                        href="#">
+                      <span class="ml-2 inline no-underline">See more</span>
+                      <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div data-controller="progress" data-progress-percent-value="25" class="bg-violet-200 rounded-full w-full">
+                <div data-progress-target="bar"
+                      class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
+                      style="width: 0%; transition-duration: 2s;"></div>
+              </div>
+            </div>
+            <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
+              <div class="flex">
+                <div class="flex-grow-1 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="space-y-0.5">
+                      <p class="text-sm text-violet-500 font-medium mb-0">Oil & Filters</p>
+                      <p class="text-2xl font-semibold text-gray-900">8,897km</p>
                     </div>
                     <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
                         href="#">
@@ -46,14 +89,30 @@
                       style="width: 0%; transition-duration: 2s;"></div>
               </div>
             </div>
-          <% end %>
+            <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
+              <div class="flex">
+                <div class="flex-grow-1 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="space-y-0.5">
+                      <p class="text-sm text-violet-500 font-medium mb-0">Brakes</p>
+                      <p class="text-2xl font-semibold text-gray-900">60,132</p>
+                    </div>
+                    <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+                        href="#">
+                      <span class="ml-2 inline no-underline">See more</span>
+                      <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div data-controller="progress" data-progress-percent-value="30" class="bg-violet-200 rounded-full w-full">
+                <div data-progress-target="bar"
+                      class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
+                      style="width: 0%; transition-duration: 2s;"></div>
+              </div>
+            </div>
+          <%# <% end %>
         </div>
-      </div>
-
-      <div>
-        <button class="btn btn-primary, color: blue;"><%=link_to "Home", root_path(@root)%></button>
-        <button type="button" class="btn btn-primary, color: white;"><%=link_to "My Vehicles", cars_path(@cars)%></button>
-        <button type="button" class="btn btn-primary, color: white;"><%=link_to "Book a Service", garages_path(@garages)%></button>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+require "open-uri"
 ServiceHistory.destroy_all
 Booking.destroy_all
 Garage.destroy_all
@@ -32,6 +33,10 @@ chris_car = Car.create!(
   kilometers: "30000",
   user: chris
 )
+
+file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1669951944/remy-lovesy-19M7TbSch2U-unsplash_xgqmxu.jpg")
+chris_car.image.attach(io: file, filename: "Audi A3", content_type: "image/jpg")
+chris_car.save
 
 puts "car created"
 

@@ -1,15 +1,12 @@
-
-
 <div class="container">
   <div class="row">
     <div class="col">
       <h1 class="h2 my-3 d-flex justify-content-center">Garages near by 🚘</h1>
-
       <div>
         <%= form_with url: garages_path, method: :get, html: {class: "mb-4"} do |f| %>
-              <button class="btn btn-primary, color: white;"><%=link_to "Home", root_path(@root)%></button>
+              <%# <button class="btn btn-primary, color: white;"><%=link_to "Home", root_path(@root)%>
           <%= f.label "find a garage" %>
-              <button type="button" class="btn btn-primary, color: white;"><%=link_to "My Vehicles", cars_path(@cars)%></button>
+              <%# <button type="button" class="btn btn-primary, color: white;"><%=link_to "My Vehicles", cars_path(@cars)%>
           <%= f.text_field :query,
                            class: "form-control",
                            value: params[:query],
@@ -19,9 +16,8 @@
                             }
                            %>
         <% end %>
-
          <%= turbo_frame_tag "search_results" do %>
-          <%= render :partial => "garage", :collection => @garages, :as => :garage %>
+ <%# <%= render :partial => "garage", :collection => @garages, :as => :garage %>
          <% end %>
        </div>
     </div>
