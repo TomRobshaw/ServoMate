@@ -1,8 +1,8 @@
 Arguments: 
-  /home/tom/.nvm/versions/node/v16.15.1/bin/node /home/tom/.nvm/versions/node/v16.15.1/bin/yarn install
+  /Users/ajemedical/.nvm/versions/node/v16.15.1/bin/node /Users/ajemedical/.nvm/versions/node/v16.15.1/bin/yarn add stimulus-dropdown
 
 PATH: 
-  ./bin:./node_modules/.bin:/home/tom/.rbenv/shims:/home/tom/.rbenv/bin:/home/tom/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:./bin:./node_modules/.bin:/home/tom/.nvm/versions/node/v16.15.1/bin:/home/tom/.rbenv/shims:/home/tom/.rbenv/bin:/home/tom/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/Tom/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Tom/AppData/Local/Programs/Microsoft VS Code/bin:/usr/local/sbin:/usr/local/sbin
+  ./bin:./node_modules/.bin:/Users/ajemedical/.nvm/versions/node/v16.15.1/bin:/Users/ajemedical/.rbenv/shims:/Users/ajemedical/.rbenv/bin:/Users/ajemedical/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:./bin:./node_modules/.bin:/Users/ajemedical/.nvm/versions/node/v16.15.1/bin:/Users/ajemedical/.rbenv/shims:/Users/ajemedical/.rbenv/bin:/Users/ajemedical/.pyenv/bin:/usr/local/sbin:/usr/local/sbin
 
 Yarn version: 
   1.22.19
@@ -11,18 +11,18 @@ Node version:
   16.15.1
 
 Platform: 
-  linux x64
+  darwin x64
 
 Trace: 
-  SyntaxError: Unknown token: { line: 857, col: 1, type: 'INVALID', value: undefined } 857:1 in /home/tom/code/TomRobshaw/ServoMate/yarn.lock
-      at Parser.unexpected (/home/tom/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63491:11)
-      at Parser.parse (/home/tom/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63622:14)
-      at parse (/home/tom/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63696:21)
-      at module.exports.exports.default (/home/tom/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63258:96)
-      at Function.<anonymous> (/home/tom/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:3068:63)
+  SyntaxError: Unknown token: { line: 857, col: 1, type: 'INVALID', value: undefined } 857:1 in /Users/ajemedical/ServoMate/yarn.lock
+      at Parser.unexpected (/Users/ajemedical/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63491:11)
+      at Parser.parse (/Users/ajemedical/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63622:14)
+      at parse (/Users/ajemedical/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63696:21)
+      at module.exports.exports.default (/Users/ajemedical/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:63258:96)
+      at Function.<anonymous> (/Users/ajemedical/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:3068:63)
       at Generator.next (<anonymous>)
-      at step (/home/tom/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:310:30)
-      at /home/tom/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:321:13
+      at step (/Users/ajemedical/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/ajemedical/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
