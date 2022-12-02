@@ -81,13 +81,13 @@
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Servo Team</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About Us</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">FAQs</a>
           </div>
         </div>
       </div>
@@ -126,9 +126,9 @@
                 data-transition-leave-to="opacity-0 scale-95"
                 class="hidden transition transform origin-top-right absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            <a href="<%= cars_path(@cars) %>" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-0"> My Vehicles </a>
+            <a href="<%= garages_path(@garages)%> " class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-1"> Find A Garage </a>
+            <a href="<%= root_path(@root) %>" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-2"> Log out </a>
           </div>
 
         </div>
@@ -146,13 +146,13 @@
         id="mobile-menu">
     <div class="space-y-1 px-2 pt-2 pb-3">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium no-underline" aria-current="page">Dashboard</a>
+      <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium no-underline" aria-current="page">Home</a>
 
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline">Team</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline">Servo Team</a>
 
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline">Projects</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline">About Us</a>
 
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline">Calendar</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline">FAQ's</a>
     </div>
   </div>
 </nav>
