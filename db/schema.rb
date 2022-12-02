@@ -67,9 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_064307) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-
-    t.bigint "user_id"
-    t.bigint "garage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"

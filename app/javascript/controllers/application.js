@@ -6,4 +6,8 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
+// Register external stimulus controllers
+import Dropdown from 'stimulus-dropdown'
+application.register('dropdown', Dropdown)
+
 export { application }
