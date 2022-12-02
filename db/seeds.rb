@@ -152,16 +152,16 @@ ServiceHistory.create(
   car_id: 1
 )
 
-Chatroom.create(
-  name: "chat",
-  user_id: 3,
-  garage_id: 13
-)
+# Chatroom.create(
+#   name: "chat",
+#   user_id: 3,
+#   garage_id: 13
+# )
 
-Chatroom.create(
-  name: "chat",
-  user: chris,
-  garage: new_garage2
-)
+# Chatroom.create(
+#   name: "chat",
+#   user: chris,
+#   garage: new_garage2
+# )
 
 puts "seeding completed"
