@@ -8,7 +8,7 @@
           <h3 class="mb-4"> My Vehicles</h3>
         </div>
           <div class="col-4 d-flex justify-content-end">
-            <%= link_to "Add Vehicle", new_car_path, class:"btn btn-primary add-list btn-md mb-4" %>
+            <%= link_to "Add Vehicle", new_car_path, class:"btn btn-primary add-list btn-md mb-10" %>
           </div>
     </div>
 
@@ -22,9 +22,10 @@
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.model %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"><%= car.year %></h6>
                   <p class="card-text"> <strong><%= car.kilometers %> Kms</strong></p>
-                  <%= link_to "Status", car, class:"btn btn-primary" %>
-                  <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-primary" %>
-
+                  <%= link_to "Status", car, class:"btn btn-primary mb-2" %>
+                  <br>
+                  <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-primary mb-2" %>
+                  <br>
                   <%=link_to "View Service History", car_service_histories_path(car), class:"btn btn-primary" %>
                 </div>
           </div>
