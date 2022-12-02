@@ -1,13 +1,15 @@
 <div class="container md">
-  <h1>New Service History</h1>
+  <h1>Add New Vehicle</h1>
 
-  <%= simple_form_for [@car, @service_history] do |f| %>
+  <%= simple_form_for [@car] do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :service_date, as: :date %>
-      <%= f.input :description %>
+  <div class="form-inputs">
+      <%= f.input :make %>
+      <%= f.input :model %>
+      <%= f.input :year %>
+      <%= f.input :kilometers %>
       <%= f.input :image, as: :file %>
     </div>
 
@@ -16,5 +18,5 @@
     </div>
 
   <%end%>
-    <div><%= link_to "Back to Service History", service_histories_path, class:"btn btn-primary" %></div>
+    <button type="button" class="btn btn-primary, color: white;"><%=link_to "My Vehicles", cars_path(@cars)%></button>
 </div>

@@ -23,13 +23,17 @@ class ServiceHistoriesController < ApplicationController
   end
 
   def index
-    @service_histories = ServiceHistory.all
+    @car = Car.find(params[:car_id])
+    @service_histories = ServiceHistory.where(car_id: @car.id)
   end
 
   def create
+    @car = Car.find(params[:car_id])
     @service_history = ServiceHistory.new(service_history_params)
+    @service_history.car = @car
+    @service_history.booking_id = 3
     if @service_history.save
-      redirect_to service_histories_path, status: :see_other
+      redirect_to service_histories_path, notice: "service history added"
     else
       render :new, status: :unprocessable_entity
     end
@@ -48,6 +52,6 @@ class ServiceHistoriesController < ApplicationController
   private
 
   def service_history_params
-    params.require(:service_history).permit(:service_date, :description, :car_id)
+    params.require(:service_history).permit(:service_date, :description, :image)
   end
 end
