@@ -142,7 +142,7 @@ puts "booking created"
 
 ServiceHistory.create(
   booking: first_booking,
-  date: "30.11.2022",
+  service_date: "30.11.2022",
   description: "Annual service",
   car_id: 1
 )

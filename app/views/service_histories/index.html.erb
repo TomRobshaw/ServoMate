@@ -6,16 +6,18 @@
           <h3 class="mb-4"> My Cars</h3>
         </div>
           <div class="col-4 d-flex justify-content-end">
-            <%= link_to "Add Service History", new_service_history_path, class:"btn btn-primary add-list btn-md mb-4" %>
+            <%# link_to "Add Service History", new_car_service_history_path(), class:"btn btn-primary add-list btn-md mb-4" %>
             <%#= link_to "Show Service History", service_history_path, class:"btn btn-primary add-list btn-md mb-4" %>
           </div>
     </div>
 
     <div id="cars" class="row display-flex flex-wrap-wrap">
-      <% @service_histories.each do |car| %>
+      <% @service_histories.each do |h| %>
         <div class="col-md-4 mt-1">
           <div class="card">
                 <div class="card-body">
+                <%= h.service_date %>
+                <%= h.description %>
                 </div>
               </div>
             </div>
