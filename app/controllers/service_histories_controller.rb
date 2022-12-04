@@ -31,7 +31,7 @@ class ServiceHistoriesController < ApplicationController
     @car = Car.find(params[:car_id])
     @service_history = ServiceHistory.new(service_history_params)
     @service_history.car = @car
-    @service_history.booking_id = 3
+    @service_history.booking_id = Booking.last.id
     if @service_history.save
       redirect_to car_service_histories_path, notice: "service history added"
     else

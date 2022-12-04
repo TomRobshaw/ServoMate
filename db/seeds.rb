@@ -106,9 +106,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Mind Over Motor Garage",
-  address: "113 Richmond Terrace, Richmond VIC 3121
-
-  ",
+  address: "113 Richmond Terrace, Richmond VIC 3121",
   user: mike
 )
 
@@ -152,16 +150,16 @@ ServiceHistory.create(
   car_id: 1
 )
 
-Chatroom.create(
-  name: "chat",
-  user_id: 3,
-  garage_id: 13
-)
+# Chatroom.create(
+#   name: "chat",
+#   user_id: 3,
+#   garage_id: 13
+# )
 
-Chatroom.create(
-  name: "chat",
-  user: chris,
-  garage: new_garage2
-)
+# Chatroom.create(
+#   name: "chat",
+#   user: chris,
+#   garage: new_garage2
+# )
 
 puts "seeding completed"
