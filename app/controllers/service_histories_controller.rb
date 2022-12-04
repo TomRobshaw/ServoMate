@@ -33,7 +33,7 @@ class ServiceHistoriesController < ApplicationController
     @service_history.car = @car
     @service_history.booking_id = 3
     if @service_history.save
-      redirect_to service_histories_path, notice: "service history added"
+      redirect_to car_service_histories_path, notice: "service history added"
     else
       render :new, status: :unprocessable_entity
     end
