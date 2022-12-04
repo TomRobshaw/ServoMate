@@ -106,9 +106,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Mind Over Motor Garage",
-  address: "113 Richmond Terrace, Richmond VIC 3121
-
-  ",
+  address: "113 Richmond Terrace, Richmond VIC 3121",
   user: mike
 )
 
