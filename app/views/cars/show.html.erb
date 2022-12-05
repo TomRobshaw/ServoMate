@@ -48,32 +48,11 @@
                       <%= tyres_countdown.round(-1) %>km to go</p>
                       <% end %>
                     </div>
-
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
-                                            href="#">
-                                          <span class="ml-2 inline no-underline">See more</span>
-                                          <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                        </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Large Modal Content</h2>
-                              <p class="mb-4">This is an example modal dialog box.</p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+                        href="#">
+                      <span class="ml-2 inline no-underline">See more</span>
+                      <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -89,7 +68,6 @@
                       style="width: 0%; transition-duration: 2s;"></div>
               </div>
             </div>
-
             <% spignite_changed_at = 20000.to_f %>
             <% spignite_interval = 30000.to_f %>
             <% spignite_difference = (@car.kilometers - spignite_changed_at) %>
@@ -108,32 +86,11 @@
                       <%= spignite_countdown.round(-1) %>km to go</p>
                       <% end %>
                     </div>
-
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
-                                            href="#">
-                                          <span class="ml-2 inline no-underline">See more</span>
-                                          <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                        </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Large Modal Content</h2>
-                              <p class="mb-4">This is an example modal dialog box.</p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+                        href="#">
+                      <span class="ml-2 inline no-underline">See more</span>
+                      <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -167,31 +124,11 @@
                       <%= oilfilters_countdown.round(-1) %>km to go</p>
                       <% end %>
                     </div>
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
-                                            href="#">
-                                          <span class="ml-2 inline no-underline">See more</span>
-                                          <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                        </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Large Modal Content</h2>
-                              <p class="mb-4">This is an example modal dialog box.</p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+                        href="#">
+                      <span class="ml-2 inline no-underline">See more</span>
+                      <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -225,31 +162,11 @@
                       <%= brakes_countdown.round(-1) %>km to go</p>
                       <% end %>
                     </div>
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
-                                            href="#">
-                                          <span class="ml-2 inline no-underline">See more</span>
-                                          <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                        </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Large Modal Content</h2>
-                              <p class="mb-4">This is an example modal dialog box.</p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+                        href="#">
+                      <span class="ml-2 inline no-underline">See more</span>
+                      <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -28,7 +28,7 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@hotwired/stimulus@>=3.0.0", "@hotwired/stimulus@^3.1.1":
+"@hotwired/stimulus@^3.1.1":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.1.tgz#e3de23623b0c52c247aba4cd5d530d257008676b"
   integrity sha512-HGlzDcf9vv/EQrMJ5ZG6VWNs8Z/xMN+1o2OhV1gKiSG6CqZt5MCBB1gRg5ILiN3U0jEAxuDTNPRfBcnZBDmupQ==
@@ -1351,6 +1351,7 @@ serialize-javascript@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-6.0.0.tgz#efae5d88f45d7924141da8b5c3a7a7e663fefeb8"
   integrity sha512-Qr3TosvguFt8ePWqsvRfrKyQXIiW+nGbYpy8XK24NQHE83caxWt+mIymTT19DGFbNWNLfEwsrkSmN64lVWB9ag==
+
   dependencies:
     randombytes "^2.1.0"
 
@@ -1426,6 +1427,7 @@ stimulus-use@^0.50.0-2:
   dependencies:
     hotkeys-js ">=3"
 
+
 strip-indent@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
@@ -1472,12 +1474,6 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tailwindcss-stimulus-components@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/tailwindcss-stimulus-components/-/tailwindcss-stimulus-components-3.0.4.tgz#598a880aed1a4966c2bf85fcc9c65fb63d02d2f0"
-  integrity sha512-kv4CHEcTvZSmthV6PseSdnW/QqKh237fZrvbNKNhWeYsTuEnOrKvdbR+3CmpuTok7L4XgEXk+XOFfo7AMhhtAA==
-  dependencies:
-    "@hotwired/stimulus" ">=3.0.0"
 
 tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.1"
