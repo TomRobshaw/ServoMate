@@ -16,29 +16,14 @@
       <% @service_histories.each do |h| %>
         <div class="col-md-4 mt-1">
           <div class="card">
-                <div class="card-body">
-                <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">  Audi </h5>
-                <h3> <%= h.service_date %> </h3>
+              <div class="card-body">
+                <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"> Audi </h5>
+                <h3> <%= h.service_date %> hello</h3>
                 <%= h.description %>
-                </div>
               </div>
-            </div>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
-
 </div>
-
-
-<%# Drop down needs testing  %>
-  <%# <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div> %>
-
