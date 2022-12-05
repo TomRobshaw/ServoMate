@@ -3,6 +3,7 @@
     <div class="col">
       <h1 class="h2 my-3 d-flex justify-content-center">Garages near by 🚘</h1>
       <div>
+      <%= raise %>
         <%= form_with url: garages_path, method: :get, html: {class: "mb-4"} do |f| %>
               <%# <button class="btn btn-primary, color: white;"><%=link_to "Home", root_path(@root)%>
           <%= f.label "find a garage" %>
@@ -17,7 +18,7 @@
                            %>
         <% end %>
          <%= turbo_frame_tag "search_results" do %>
- <%# <%= render :partial => "garage", :collection => @garages, :as => :garage %>
+          <%# <%= render :partial => "garage", :collection => @garages, :as => :garage %>
          <% end %>
        </div>
     </div>
@@ -27,11 +28,12 @@
 <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
-<div>
+<%# <div> %>
   <%#=  f.input :address,
   input_html: {data: {address_autocomplete_target: "address"}},
   wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
 %>
-</div>
+<%# </div> %>
