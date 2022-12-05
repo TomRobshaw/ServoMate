@@ -16,23 +16,23 @@
       <% @cars.each do |car| %>
         <div class="col-md-4 mt-1">
           <div class="card">
-                <div class="card-body">
-                  <%= cl_image_tag car.image.key, crop: :fill, class:"card-img-top" %>
-                  <h4 class="card-title"><strong><%= car.make %></strong></h4>
-                  <h6 class="card-subtitle mb-2 text-muted"><%= car.model %></h6>
-                  <h6 class="card-subtitle mb-2 text-muted"><%= car.year %></h6>
-                  <p class="card-text"> <strong><%= car.kilometers %> Kms</strong></p>
-                  <%= link_to "Status", car, class:"btn btn-primary mb-2" %>
-                  <br>
-                  <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-primary mb-2" %>
-                  <br>
-                  <%=link_to "View Service History", car_service_histories_path(car), class:"btn btn-primary" %>
-                </div>
+              <div class="card-body">
+                <%= cl_image_tag car.image.key, crop: :fill, class:"card-img-top" if car.image.attached? %>
+                <h4 class="card-title"><strong><%= car.make %></strong></h4>
+                <h6 class="card-subtitle mb-2 text-muted"><%= car.model %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= car.year %></h6>
+                <p class="card-text"> <strong><%= car.kilometers %> Kms</strong></p>
+                <%= link_to "Status", car, class:"btn btn-primary mb-2" %>
+                <br>
+                <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-primary mb-2" %>
+                <br>
+                <%=link_to "View Service History", car_service_histories_path(car), class:"btn btn-primary" %>
+
+              </div>
           </div>
         </div>
       <% end %>
     </div>
-  </div>
 <%#
 <h2>Car show</h2>
   <div>
