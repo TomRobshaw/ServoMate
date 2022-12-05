@@ -17,6 +17,7 @@
     <div id="cars" class="row display-flex flex-wrap-wrap">
       <% @cars.each do |car| %>
         <div class="col-md-4 mt-1">
+
           <div class="container mx-auto vehicle-card max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-5 space-y-4">
                   <%= cl_image_tag car.image.key, crop: :fill, class:"rounded-t-lg" if car.image.attached? %>
@@ -28,6 +29,22 @@
                       <button type="button"><%=link_to "View Service History", car_service_histories_path(car), class:"py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"%> </button>
                     </div>
                 </div>
+
+          <div class="card">
+              <div class="card-body">
+                <%= cl_image_tag car.image.key, crop: :fill, class:"card-img-top" if car.image.attached? %>
+                <h4 class="card-title"><strong><%= car.make %></strong></h4>
+                <h6 class="card-subtitle mb-2 text-muted"><%= car.model %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= car.year %></h6>
+                <p class="card-text"> <strong><%= car.kilometers %> Kms</strong></p>
+                <%= link_to "Status", car, class:"btn btn-primary mb-2" %>
+                <br>
+                <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-primary mb-2" %>
+                <br>
+                <%=link_to "View Service History", car_service_histories_path(car), class:"btn btn-primary" %>
+
+              </div>
+
           </div>
         </div>
       <% end %>
@@ -35,3 +52,4 @@
   </div>
 </div>
                   <%# <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-primary mb-2" %>
+

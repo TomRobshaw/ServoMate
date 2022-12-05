@@ -68,15 +68,17 @@
 
             Menu open: "block", Menu closed: "hidden"
           -->
-          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <%# <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          </svg> %>
         </button>
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center">
-          <img class="block h-8 w-auto lg:hidden" src="https://res.cloudinary.com/dapgryo75/image/upload/v1669877012/car_wttlxi.png" alt="Servo Mate">
-          <img class="hidden h-8 w-auto lg:block" src="https://res.cloudinary.com/dapgryo75/image/upload/v1669877012/car_wttlxi.png" alt="Servo Mate">
+          <a href="<%= cars_path(@cars) %>"aria-current="page" >
+            <img class="block h-8 w-auto lg:hidden" src="https://res.cloudinary.com/dapgryo75/image/upload/v1669877012/car_wttlxi.png" alt="Servo Mate">
+            <img class="hidden h-8 w-auto lg:block" src="https://res.cloudinary.com/dapgryo75/image/upload/v1669877012/car_wttlxi.png" alt="Servo Mate">
+          </a>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
@@ -119,16 +121,23 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-          <div data-dropdown-target="menu"
+          <div
+                data-dropdown-target="menu"
                 data-transition-enter-from="opacity-0 scale-95"
                 data-transition-enter-to="opacity-100 scale-100"
                 data-transition-leave-from="opacity-100 scale-100"
                 data-transition-leave-to="opacity-0 scale-95"
                 class="hidden transition transform origin-top-right absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            <% if user_signed_in? %>
             <!-- Active: "bg-gray-100", Not Active: "" -->
-            <a href="<%= cars_path(@cars) %>" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-0"> My Vehicles </a>
-            <a href="<%= garages_path(@garages)%> " class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-1"> Find A Garage </a>
-            <a href="<%= root_path(@root) %>" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-2"> Log out </a>
+                <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline", role: "menuitem", tabindex: "-1", id: "user-menu-item-2" %>
+            <% else %>
+                <%= button_to "Signed in", new_user_session_path, method: :delete, class: "text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline", role: "menuitem", tabindex: "-1", id: "user-menu-item-2" %>
+            <% end %>
+
+
+
+            <%# <a href="<%= root_path(@root) %>
           </div>
 
         </div>
@@ -142,11 +151,14 @@
         data-transition-enter-to="opacity-100 scale-100"
         data-transition-leave-from="opacity-100 scale-100"
         data-transition-leave-to="opacity-0 scale-95"
-        class="hidden transition transform origin-top duration-500"
-        id="mobile-menu">
+        class="hidden transition transform origin-top-left absolute left-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+        <%# class="hidden transition transform origin-top duration-500"
+        id="mobile-menu"> %>
     <div class="space-y-1 px-2 pt-2 pb-3">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a href="<%= root_path(@root) %>" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium no-underline" aria-current="page">Home</a>
+      <a href="<%= cars_path(@cars) %>" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-0"> Dashboard </a>
+      <a href="<%= garages_path(@garages)%> " class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900 no-underline" role="menuitem" tabindex="-1" id="user-menu-item-1"> Find A Garage </a>
+
 
       <%# <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline">Servo Team</a>
 
