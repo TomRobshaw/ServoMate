@@ -23,7 +23,6 @@ class GaragesController < ApplicationController
 
   def index
     @garages = Garage.all
-
     if params[:query].present?
       @garages = @garages.where("name ILIKE ?", "%#{params[:query]}%")
     end
