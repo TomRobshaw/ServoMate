@@ -16,10 +16,22 @@
         </div>
       </div>
     </div>
-
+    <% tyres_changed_at = 20000.to_f %>
+    <% tyres_interval = 96000.to_f %>
+    <% tyres_value = (tyres_changed_at / tyres_interval).to_f * 100 %>
+    <% tyres_countdown = (tyres_interval).to_i - (@car.kilometers - tyres_changed_at).round(-1) %>
       <div>
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Last 30 days</h3>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <%= f.input :kilometers %>
+        <div class="form-actions">
+          <%= f.submit class:"btn btn-primary"%>
+        </div>
+         <% end %> </h3>
 
+        <h4 class="text-lg font-medium leading-6 text-gray-900">Last updated 00/00/00</h4>
         <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <%# <% 3.times do %>
             <%# CARD %>
@@ -29,7 +41,12 @@
                   <div class="flex items-center justify-between">
                     <div class="space-y-0.5">
                       <p class="text-sm text-violet-500 font-medium mb-0">Tyres</p>
-                      <p class="text-2xl font-semibold text-gray-900">71,897km</p>
+                      <p class="text-2xl font-semibold text-gray-900">
+                      <% if tyres_countdown.round(-1).negative? %>
+                      <%= 0 %>km to go</p>
+                      <% else %>
+                      <%= tyres_countdown.round(-1) %>km to go</p>
+                      <% end %>
                     </div>
                     <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
                         href="#">
@@ -39,19 +56,35 @@
                   </div>
                 </div>
               </div>
-              <div data-controller="progress" data-progress-percent-value="90" class="bg-violet-200 rounded-full w-full">
+               <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
+              data-progress-percent-value=
+              "<% if tyres_value >= 100 %>
+              <%= 100 %>
+              <% else %>
+              <%= tyres_value %>
+              <% end %>">
                 <div data-progress-target="bar"
                       class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
                       style="width: 0%; transition-duration: 2s;"></div>
               </div>
             </div>
+            <% spignite_changed_at = 20000.to_f %>
+            <% spignite_interval = 30000.to_f %>
+            <% spignite_difference = (@car.kilometers - spignite_changed_at) %>
+            <% spignite_value = (spignite_difference / spignite_interval).to_f * 100 %>
+            <% spignite_countdown = spignite_interval - spignite_difference %>
             <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
               <div class="flex">
                 <div class="flex-grow-1 space-y-4">
                   <div class="flex items-center justify-between">
                     <div class="space-y-0.5">
                       <p class="text-sm text-violet-500 font-medium mb-0">Spark Plugs & Ignition</p>
-                      <p class="text-2xl font-semibold text-gray-900">17,852km</p>
+                      <p class="text-2xl font-semibold text-gray-900">
+                      <% if spignite_countdown.round(-1).negative? %>
+                      <%= 0 %>km to go</p>
+                      <% else %>
+                      <%= spignite_countdown.round(-1) %>km to go</p>
+                      <% end %>
                     </div>
                     <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
                         href="#">
@@ -61,19 +94,35 @@
                   </div>
                 </div>
               </div>
-              <div data-controller="progress" data-progress-percent-value="25" class="bg-violet-200 rounded-full w-full">
+               <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
+              data-progress-percent-value=
+              "<% if spignite_value >= 100 %>
+              <%= 100 %>
+              <% else %>
+              <%= spignite_value %>
+              <% end %>">
                 <div data-progress-target="bar"
                       class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
                       style="width: 0%; transition-duration: 2s;"></div>
               </div>
             </div>
+            <% oilfilters_changed_at = 20000.to_f %>
+            <% oilfilters_interval = 15000.to_f %>
+            <% oilfilters_difference = (@car.kilometers - oilfilters_changed_at) %>
+            <% oilfilters_value = (oilfilters_difference / oilfilters_interval).to_f * 100 %>
+            <% oilfilters_countdown = oilfilters_interval - oilfilters_difference %>
             <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
               <div class="flex">
                 <div class="flex-grow-1 space-y-4">
                   <div class="flex items-center justify-between">
                     <div class="space-y-0.5">
                       <p class="text-sm text-violet-500 font-medium mb-0">Oil & Filters</p>
-                      <p class="text-2xl font-semibold text-gray-900">8,897km</p>
+                      <p class="text-2xl font-semibold text-gray-900">
+                      <% if oilfilters_countdown.round(-1).negative? %>
+                      <%= 0 %>km to go</p>
+                      <% else %>
+                      <%= oilfilters_countdown.round(-1) %>km to go</p>
+                      <% end %>
                     </div>
                     <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
                         href="#">
@@ -83,19 +132,35 @@
                   </div>
                 </div>
               </div>
-              <div data-controller="progress" data-progress-percent-value="80" class="bg-violet-200 rounded-full w-full">
+               <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
+              data-progress-percent-value=
+              "<% if oilfilters_value >= 100 %>
+              <%= 100 %>
+              <% else %>
+              <%= oilfilters_value %>
+              <% end %>">
                 <div data-progress-target="bar"
                       class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
                       style="width: 0%; transition-duration: 2s;"></div>
               </div>
             </div>
+            <% brakes_changed_at = 20000.to_f %>
+            <% brakes_interval = 80000.to_f %>
+            <% brakes_difference = (@car.kilometers - brakes_changed_at) %>
+            <% brakes_value = (brakes_difference / brakes_interval).to_f * 100 %>
+            <% brakes_countdown = brakes_interval - brakes_difference %>
             <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
               <div class="flex">
                 <div class="flex-grow-1 space-y-4">
                   <div class="flex items-center justify-between">
                     <div class="space-y-0.5">
                       <p class="text-sm text-violet-500 font-medium mb-0">Brakes</p>
-                      <p class="text-2xl font-semibold text-gray-900">60,132</p>
+                      <p class="text-2xl font-semibold text-gray-900">
+                      <% if brakes_countdown.round(-1).negative? %>
+                      <%= 0 %>km to go</p>
+                      <% else %>
+                      <%= brakes_countdown.round(-1) %>km to go</p>
+                      <% end %>
                     </div>
                     <a class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
                         href="#">
@@ -105,7 +170,13 @@
                   </div>
                 </div>
               </div>
-              <div data-controller="progress" data-progress-percent-value="30" class="bg-violet-200 rounded-full w-full">
+              <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
+              data-progress-percent-value=
+              "<% if brakes_value >= 100 %>
+              <%= 100 %>
+              <% else %>
+              <%= brakes_value %>
+              <% end %>">
                 <div data-progress-target="bar"
                       class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
                       style="width: 0%; transition-duration: 2s;"></div>
