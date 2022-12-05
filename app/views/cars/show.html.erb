@@ -4,7 +4,7 @@
   <div class="contiainer">
   <div><h1><%= @car.make %></h1><h2><%= @car.model%></h2></div>
     <div class="image">
-      <%# <%= cl_image_tag @car.image.key, crop: :fill, class:"card-img-top" %> %>
+      <%= cl_image_tag @car.image.key, crop: :fill, class:"card-img-top" %>
     </div>
       <%# progress bar container %>
 
