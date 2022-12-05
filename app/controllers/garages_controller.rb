@@ -23,7 +23,6 @@ class GaragesController < ApplicationController
 
   def index
     @garages = Garage.all
-
     if params[:query].present?
       @garages = @garages.where("name ILIKE ?", "%#{params[:query]}%")
     end
@@ -32,7 +31,7 @@ class GaragesController < ApplicationController
         lat: garage.latitude,
         lng: garage.longitude,
         info_window: render_to_string(partial: "info_window", locals: {garage: garage}),
-        image_url: helpers.asset_url("Workshop-21")
+        image_url: helpers.asset_url("")
       }
     end
   end

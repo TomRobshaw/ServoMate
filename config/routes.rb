@@ -2,15 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get "tyres", to: "cars#tyres"
-  get "oil_and_filter", to: "cars#oil_filter"
-  get "spark_plugs_and_ignition", to: "cars#spark_plugs_and_ignition"
-  get "brakes", to: "cars#brakes"
+  # get "tyres", to: "cars#tyres"
+  # get "oil_and_filter", to: "cars#oil_filter"
+  # get "spark_plugs_and_ignition", to: "cars#spark_plugs_and_ignition"
+  # get "brakes", to: "cars#brakes"
 
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :cars, only: [:index, :new, :create, :show] do
+  resources :cars, only: [:index, :new, :create, :show, :update] do
     resources :service_histories, only: [:new, :create, :index, :show]
   end
   resources :bookings, only: [:new, :index, :show, :create]
