@@ -1,9 +1,10 @@
-<h1 class="mb-4 mt-4 d-flex justify-content-start">Service History Index</h1>
+<div class="class text-center sm:text-left">
+  <h1>Service History</h1>
 
   <hr size="2px" width="100%" color="gray">
     <div class="row justify-content-between">
         <div class="col-4">
-          <h3 class="mb-4"> My Cars</h3>
+          <h5 class="mb-4"> Car reciepts</h5>
         </div>
           <div class="col-4 d-flex justify-content-end">
             <%# link_to "Add Service History", new_car_service_history_path(), class:"btn btn-primary add-list btn-md mb-4" %>
@@ -11,12 +12,13 @@
           </div>
     </div>
 
-    <div id="cars" class="row display-flex flex-wrap-wrap">
+    <div id="cars" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
       <% @service_histories.each do |h| %>
         <div class="col-md-4 mt-1">
           <div class="card">
                 <div class="card-body">
-                <%= h.service_date %>
+                <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">  Audi </h5>
+                <h3> <%= h.service_date %> </h3>
                 <%= h.description %>
                 </div>
               </div>
@@ -24,3 +26,4 @@
       <% end %>
     </div>
   </div>
+</div>
