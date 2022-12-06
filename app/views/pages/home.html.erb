@@ -23,7 +23,8 @@
           <div>
             <h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">ServoMate</h1>
 
-            <p class="mt-6 text-lg leading-8 text-gray-600 sm:text-center">Keep your vehicle costs to a minimum with the easiest, most hassle free parts & service tracking app out there..    </p>
+            <% if !signed_in?%>
+            <p class="mt-6 text-lg leading-8 text-light-gray-600 sm:text-center">Keep your vehicle costs to a minimum with the easiest, most hassle free parts & service tracking app out there..    </p>
             <div class="mt-8 flex gap-x-4 sm:justify-center">
               <a href="<%= new_user_session_path %>" class="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 Sign In
@@ -35,6 +36,14 @@
               </a>
 
             </div>
+            <% else %>
+              <p class="mt-6 text-lg leading-8 text-light-gray-600 sm:text-center">Keep your vehicle costs to a minimum with the easiest, most hassle free parts & service tracking app out there..    </p>
+              <div class="mt-8 flex gap-x-4 sm:justify-center">
+
+
+              </div>
+            <% end %>
+
           </div>
           <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
             <svg class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]" viewBox="0 0 1155 678" fill="none" xmlns="http://www.w3.org/2000/svg">
