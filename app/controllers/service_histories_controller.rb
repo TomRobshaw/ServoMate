@@ -1,4 +1,5 @@
 class ServiceHistoriesController < ApplicationController
+  # before_action :set_service_history, only: %i[show edit update destroy]
   def new
     @car = Car.find(params[:car_id])
     @service_history = ServiceHistory.new
@@ -31,7 +32,7 @@ class ServiceHistoriesController < ApplicationController
     @car = Car.find(params[:car_id])
     @service_history = ServiceHistory.new(service_history_params)
     @service_history.car = @car
-    @service_history.booking_id = Booking.last.id
+    # @service_history.booking_id = Booking.last.id
     if @service_history.save
       redirect_to car_service_histories_path, notice: "service history added"
     else
@@ -54,4 +55,9 @@ class ServiceHistoriesController < ApplicationController
   def service_history_params
     params.require(:service_history).permit(:service_date, :description, :image)
   end
+
+  # def set_service_history
+  #   @car = Car.find(params[:car_id])
+  #   @service_history.car = @car
+  # end
 end

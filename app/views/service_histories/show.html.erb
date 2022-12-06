@@ -4,3 +4,40 @@
   <%= service_history.date %>
   <%= service_history.image %>
 <% end %>
+
+<div data-controller="modal" data-modal-allow-background-close="true">
+  <% @service_histories.each do |h| %>
+    <div class="col-md-4 mt-1">
+      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
+        href="#">
+        <div class="card">
+              <div class="card-body">
+                <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"> Audi </h5>
+                <h3> <%= h.service_date %> hello</h3>
+                <%= h.description %>
+              </div>
+          </div>
+      </a>
+    </div>
+  <% end %>
+                      <!-- Modal Container -->
+                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
+                        <!-- Modal Inner Container -->
+                        <div class="max-h-screen w-full max-w-lg relative">
+                          <!-- Modal Card -->
+                          <div class="m-1 bg-white rounded shadow">
+                            <div class="p-8">
+                              <h2 class="text-xl mb-4">Large Modal Content</h2>
+                              <%= service_history.image %>
+                              <div class="flex justify-end items-center flex-wrap mt-6">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
