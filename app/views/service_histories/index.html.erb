@@ -1,29 +1,57 @@
 <div class="class text-center sm:text-left">
-  <h1>Service History</h1>
+    <h1>Service History</h1>
 
-  <hr size="2px" width="100%" color="gray">
+      <hr size="2px" width="100%" color="gray">
     <div class="row justify-content-between">
         <div class="col-4">
           <h5 class="mb-4"> Car reciepts</h5>
         </div>
-          <div class="col-4 d-flex justify-content-end">
+          <%# <div class="col-4 d-flex justify-content-end"> %>
             <%# link_to "Add Service History", new_car_service_history_path(), class:"btn btn-primary add-list btn-md mb-4" %>
             <%#= link_to "Show Service History", service_history_path, class:"btn btn-primary add-list btn-md mb-4" %>
-          </div>
+          <%# </div> %>
     </div>
 
-    <div id="cars" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <% @service_histories.each do |h| %>
-        <div class="col-md-4 mt-1">
-          <div class="card">
-              <div class="card-body">
-                <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"> Audi </h5>
-                <h3> <%= h.service_date %> hello</h3>
-                <%= h.description %>
-              </div>
-          </div>
+
+
+
+
+    <div class='flex items-center justify-center min-h-0 from-gray-100 via-gray-300 to-gray-500 bg-gradient-to-br' >
+        <div class='w-full max-w-lg p-0 mx-auto bg-white rounded-sm shadow-xl'>
+          <% @service_histories.each do |h| %>
+
+
+
+
+
+
+            <div class='max-w-md mx-auto space-y-6' x-data="{ reportsOpen: false }">
+
+
+                <p class='text-gray-600'></p>
+
+                <div @click="reportsOpen = !reportsOpen" class='flex items-center text-gray-600 w-full border-b overflow-hidden mt-2 md:mt-0 mb-2 mx-auto'>
+                  <div class='w-10 border-r px-2 transform transition duration-300 ease-in-out' :class="{'rotate-90': reportsOpen,' -translate-y-0.0': !reportsOpen }">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </div>
+                  <div class='flex items-center px-2 py-3'>
+                    <div class='mx-3'>
+                      <button class="hover:underline"><%= h.service_date %></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex p-2 md:p-0 w-full transform transition duration-300 ease-in-out border-b pb-10"
+                x-cloak x-show="reportsOpen" x-collapse x-collapse.duration.500ms >
+                  <div class="grid grid-cols-1 gap-4"><%= h.description %>
+                    <%= cl_image_tag h.image.key, crop: :fill, class:"rounded-lg" if h.image.attached? %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
         </div>
-      <% end %>
     </div>
-  </div>
+
 </div>

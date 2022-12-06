@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_002832) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_014059) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -95,14 +95,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_002832) do
   end
 
   create_table "service_histories", force: :cascade do |t|
-    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
     t.string "image"
     t.bigint "car_id"
     t.date "service_date"
-    t.index ["booking_id"], name: "index_service_histories_on_booking_id"
     t.index ["car_id"], name: "index_service_histories_on_car_id"
   end
 
@@ -130,6 +128,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_002832) do
   add_foreign_key "garages", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "service_histories", "bookings"
   add_foreign_key "service_histories", "cars"
 end
