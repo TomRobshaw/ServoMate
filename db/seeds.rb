@@ -136,12 +136,12 @@ puts "garage created"
 
 puts "garage created"
 
-first_booking = Booking.create(
-  car: chris_car,
-  garage: @new_garage
-)
+# first_booking = Booking.create(
+#   car: chris_car,
+#   garage: @new_garage
+# )
 
-puts "booking created"
+# puts "booking created"
 
 ServiceHistory.create(
   booking: first_booking,

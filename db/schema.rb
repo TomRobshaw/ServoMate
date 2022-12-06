@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_002832) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_042829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,10 +52,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_002832) do
   end
 
   create_table "cars", force: :cascade do |t|
-    t.string "tyres"
-    t.string "oil_and_filter"
-    t.string "spark_plugs_and_ignition"
-    t.string "brakes"
+    t.integer "tyres"
+    t.integer "oil_and_filter"
+    t.integer "spark_plugs_and_ignition"
+    t.integer "brakes"
     t.integer "kilometers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,13 +64,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_002832) do
     t.string "model"
     t.integer "year"
     t.string "image"
+    t.integer "tyres_expired"
+    t.integer "brakes_expired"
+    t.integer "oil_and_filter_expired"
+    t.integer "spark_plugs_and_ignition_expired"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
   create_table "chatrooms", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "garage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.index ["garage_id"], name: "index_chatrooms_on_garage_id"
+    t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
   create_table "garages", force: :cascade do |t|
@@ -127,6 +135,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_002832) do
   add_foreign_key "bookings", "cars"
   add_foreign_key "bookings", "garages"
   add_foreign_key "cars", "users"
+  add_foreign_key "chatrooms", "garages"
+  add_foreign_key "chatrooms", "users"
   add_foreign_key "garages", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
