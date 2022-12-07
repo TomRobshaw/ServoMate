@@ -1,6 +1,5 @@
 require "open-uri"
 ServiceHistory.destroy_all
-Booking.destroy_all
 Garage.destroy_all
 Car.destroy_all
 User.destroy_all
@@ -31,7 +30,11 @@ chris_car = Car.create!(
   model: "A3",
   year: "2020",
   kilometers: "30000",
-  user: chris
+  user: chris,
+  tyres: "0",
+  oil_and_filter: "25000",
+  spark_plugs_and_ignition: "15000",
+  brakes: "30000"
 )
 
 file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1669951944/remy-lovesy-19M7TbSch2U-unsplash_xgqmxu.jpg")
@@ -66,7 +69,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Car Hooraah",
-  address: "14 McCrae Mews, Richmond VIC 3121",
+  address: "21 Third St, Black Rock VIC 3193",
   user: mike
 )
 
@@ -74,7 +77,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Oiled up Machanics",
-  address: "1A Gordon Grove, South Yarra VIC 3141",
+  address: "42-44 Aylesbury Dr, Altona VIC 3018",
   user: mike
 )
 
@@ -114,7 +117,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Mario Car repair",
-  address: "100 Lennox St, Richmond VIC 3121",
+  address: "1 Carey Ct, Keysborough VIC 3173",
   user: mike
 )
 
@@ -136,30 +139,10 @@ puts "garage created"
 
 puts "garage created"
 
-first_booking = Booking.create(
-  car: chris_car,
-  garage: @new_garage
-)
-
-puts "booking created"
-
 ServiceHistory.create(
-  booking: first_booking,
   service_date: "30.11.2022",
   description: "Annual service",
   car_id: 1
 )
-
-# Chatroom.create(
-#   name: "chat",
-#   user_id: 3,
-#   garage_id: 13
-# )
-
-# Chatroom.create(
-#   name: "chat",
-#   user: chris,
-#   garage: new_garage2
-# )
 
 puts "seeding completed"

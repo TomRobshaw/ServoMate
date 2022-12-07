@@ -26,9 +26,9 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.wrapper tag: 'div', error_class: 'relative rounded-md shadow-sm' do |c|
-      b.use :label, class: "block text-sm font-medium text-gray-900 dark:text-slate-100"
+      b.use :label, class: "font-medium dark:text-slate-900 integer required"
       c.use :input,
-        class: 'appearance-none block mt-1 w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 outline-none focus:outline-none focus:ring-1 focus:ring-violet-200 focus:border-violet-500 sm:text-sm dark:bg-slate-600 dark:border-slate-500 dark:focus:border-slate-100 dark:text-slate-100',
+        class: 'block mt-0 w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm sm:text-sm bg-white dark:text-slate-900 numeric integer required',
         error_class: 'block w-full pr-10 border-red-500 dark:border-red-300 dark:focus:border-red-500 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md'
       c.use :full_error, wrap_with: { tag: 'p', class: 'mt-2 text-sm text-red-500' }
     end
