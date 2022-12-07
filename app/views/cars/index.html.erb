@@ -3,26 +3,27 @@
 
     <div class="row justify-content-between">
         <div class="col-4">
-          <h3 class="mb-4"> My Vehicles</h3>
+          <h2 class="mb-2"> My Vehicles</h2>
         </div>
           <div class="col-4 d-flex justify-content-end">
-              <%= link_to "Add Vehicle", new_car_path, class:"btn btn-primary add-list btn-md mb-10 rounded-pill"%>
+              <%= link_to "+", new_car_path, class:"btn btn-primary add-list btn-lg mb-2 mt-2
+               rounded-pill text-white"%>
           </div>
     </div>
     <hr size="2px" width="100%" color="gray">
 
-    <div id="cars" class="row display-flex flex-wrap-wrap mt-4">
+    <div id="cars" class="row display-flex flex-wrap-wrap mt-2">
       <% @cars.each do |car| %>
         <div class="col-md-4 mt-1">
           <div class="container-fluid">
-              <div class="card border border-2 p-4 bg-white rounded-4 shadow p-3 mb-5 rounded">
-                <%= cl_image_tag car.image.key, crop: :fill, class:"rounded-4 mb-4" if car.image.attached? %>
+              <div class="card border border-2 p-4 bg-white rounded-4 shadow p-3 mb-2 rounded">
+                <%= cl_image_tag car.image.key, crop: :fill, class:"rounded-4 mb-2" if car.image.attached? %>
                 <h5 class="card-title fs-3 fw-bold "><%= car.make %></h5>
                 <h6 class="card-description fs-5 fw-normal text-muted"><%= car.model %> <%= car.year %></h6>
                 <p class="card-caption fs-6 fw-bolder "> <%= car.kilometers %> Kms </p>
-                    <%= link_to "Status", car, class:"btn btn-primary mb-2"%>
-                    <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-secondary mb-2" %>
-                    <%=link_to "Service History", car_service_histories_path(car), class:"btn btn-link mb-2"%>
+                    <%= link_to "Status", car, class:"btn btn-primary mb-2 text-white rounded"%>
+                    <%=link_to "Add Service History", new_car_service_history_path(car), class:"btn btn-secondary mb-2 rounded" %>
+                    <%=link_to "Service History", car_service_histories_path(car), class:"btn btn-link mb-2 rounded"%>
               </div>
           </div>
         </div>
