@@ -45,7 +45,7 @@ puts "car created"
 
 new_garage2 = Garage.create(
   name: "Torque and Spanners",
-  address: "7 Stewart Place, Richmond, Victoria, 3121",
+  address: "2 Ellis St, Richmond VIC 3121",
   user: mike,
 )
 
@@ -61,7 +61,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Dodgy Daves Quick Fix Garage",
-  address: "7 Stewart Street, Richmond, Victoria, 3121",
+  address: "27a Hill St, Richmond VIC 3121",
   user: mike
 )
 
@@ -109,7 +109,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Mind Over Motor Garage",
-  address: "113 Richmond Terrace, Richmond VIC 3121",
+  address: "29-31 North St, Richmond VIC 3121",
   user: mike
 )
 
