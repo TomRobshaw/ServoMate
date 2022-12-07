@@ -31,7 +31,11 @@ chris_car = Car.create!(
   model: "A3",
   year: "2020",
   kilometers: "30000",
-  user: chris
+  user: chris,
+  tyres: "0",
+  oil_and_filter: "25000",
+  spark_plugs_and_ignition: "15000",
+  brakes: "30000"
 )
 
 file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1669951944/remy-lovesy-19M7TbSch2U-unsplash_xgqmxu.jpg")
@@ -136,30 +140,11 @@ puts "garage created"
 
 puts "garage created"
 
-first_booking = Booking.create(
-  car: chris_car,
-  garage: @new_garage
-)
-
-puts "booking created"
-
 ServiceHistory.create(
-  booking: first_booking,
+  # booking: first_booking,
   service_date: "30.11.2022",
   description: "Annual service",
   car_id: 1
 )
-
-# Chatroom.create(
-#   name: "chat",
-#   user_id: 3,
-#   garage_id: 13
-# )
-
-# Chatroom.create(
-#   name: "chat",
-#   user: chris,
-#   garage: new_garage2
-# )
 
 puts "seeding completed"
