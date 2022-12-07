@@ -1,277 +1,272 @@
 <div class="container">
-  <div class="contiainer">
-  <div><h1><%= @car.make %></h1><h2><%= @car.model%></h2></div>
+    <div class="d-flex inline justify-content-between"><h1><%= @car.make %></h1><h3 class="mt-1"><%= @car.model%></h3><h3 class="mt-1"><%= @car.year%></h3>
+    </div>
     <div class="image">
       <%= cl_image_tag @car.image.key, crop: :fill, class:"card-img-top" %>
     </div>
-  </div>
-      <div>
-        <h3 class="text-lg font-medium leading-6 text-gray-900">
-          <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
-          <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-          <%= f.input :kilometers %>
-        <div class="form-actions">
-          <%= f.submit class:"btn btn-primary"%>
-        </div>
-         <% end %> </h3>
 
-        <h4 class="text-lg font-medium leading-6 text-gray-900">Last updated: <%= "#{@car.updated_at.day}/#{@car.updated_at.month}/#{@car.updated_at.year}" %></h4>
-        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
-              <div class="flex">
-                <div class="flex-grow-1 space-y-4">
-                  <div class="flex items-center justify-between">
-                    <div class="space-y-0.5">
-                      <p class="text-sm text-violet-500 font-medium mb-0">Tyres</p>
-                      <p class="text-2xl font-semibold text-gray-900">
-                      <% if @tyres_countdown <= 0 %>
-                      <%= 0 %>km to go</p>
-                      <% else %>
-                      <%= @tyres_countdown %>km to go</p>
-                      <% end %>
-                    </div>
-
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20" href="#">
-                        <span class="ml-2 inline no-underline">See more</span>
-                        <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                      </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Tyres</h2>
-                              <p class="mb-4">Remember to rotate your tyres from front to back every 10,000km. This helps keep the level of wear consistent throughout all four tyres.</p>
-                              <p class="text-lg font-medium leading-6 text-gray-900">
-                                  <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
-                                  <%= f.error_notification %>
-                                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-                                  <%= f.hidden_field :tyres, value: @car.kilometers %>
-                                <div class="form-actions">
-                                  <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
-                                </div>
-                                <% end %> </p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
-              data-progress-percent-value=
-              "<% if @tyres_percentage >= 100 %>
-                <%= 100 %>
-              <% else %>
-                <%= @tyres_percentage %>
-              <% end %>">
-                <div data-progress-target="bar"
-                      class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
-                      style="width: 0%; transition-duration: 2s;"></div>
-              </div>
-            </div>
-
-            <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
-              <div class="flex">
-                <div class="flex-grow-1 space-y-4">
-                  <div class="flex items-center justify-between">
-                    <div class="space-y-0.5">
-                      <p class="text-sm text-violet-500 font-medium mb-0">Spark Plugs & Ignition</p>
-                      <p class="text-2xl font-semibold text-gray-900">
-                      <% if @spark_plugs_and_ignition_countdown <= 0 %>
-                      <%= 0 %>km to go</p>
-                      <% else %>
-                      <%= @spark_plugs_and_ignition_countdown %>km to go</p>
-                      <% end %>
-                    </div>
-
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20" href="#">
-                        <span class="ml-2 inline no-underline">See more</span>
-                        <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                      </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Spark Plugs & Ignition</h2>
-                               <p class="mb-4">Ignition is vital in combustion engines, keeping on top of these ensures all fuel is ignited at the optimum time - meaning better fuel efficiency!</p>
-                              <p class="text-lg font-medium leading-6 text-gray-900">
-                                  <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
-                                  <%= f.error_notification %>
-                                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-                                  <%= f.hidden_field :spark_plugs_and_ignition, value: @car.kilometers %>
-                                <div class="form-actions">
-                                  <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
-                                </div>
-                                <% end %> </p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
-              data-progress-percent-value=
-              "<% if @spark_plugs_and_ignition_percentage >= 100 %>
-              <%= 100 %>
-              <% else %>
-              <%= @spark_plugs_and_ignition_percentage %>
-              <% end %>">
-                <div data-progress-target="bar"
-                      class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
-                      style="width: 0%; transition-duration: 2s;"></div>
-              </div>
-            </div>
-
-            <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
-              <div class="flex">
-                <div class="flex-grow-1 space-y-4">
-                  <div class="flex items-center justify-between">
-                    <div class="space-y-0.5">
-                      <p class="text-sm text-violet-500 font-medium mb-0">Oil & Filters</p>
-                      <p class="text-2xl font-semibold text-gray-900">
-                      <% if @oil_and_filter_countdown <= 0 %>
-                      <%= 0 %>km to go</p>
-                      <% else %>
-                      <%= @oil_and_filter_countdown %>km to go</p>
-                      <% end %>
-                    </div>
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20" href="#">
-                        <span class="ml-2 inline no-underline">See more</span>
-                        <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                      </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Oil & Filters</h2>
-                               <p class="mb-4">Oil lubricates the engine internals which help to prevent wear of engine components. Filters, both oil and air should be changed to relieve any build up of debris.</p>
-                              <p class="text-lg font-medium leading-6 text-gray-900">
-                                  <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
-                                  <%= f.error_notification %>
-                                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-                                  <%= f.hidden_field :oil_and_filter, value: @car.kilometers %>
-                                <div class="form-actions">
-                                  <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
-                                </div>
-                                <% end %> </p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
-              data-progress-percent-value=
-              "<% if @oil_and_filter_percentage >= 100 %>
-              <%= 100 %>
-              <% else %>
-              <%= @oil_and_filter_percentage %>
-              <% end %>">
-                <div data-progress-target="bar"
-                      class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
-                      style="width: 0%; transition-duration: 2s;"></div>
-              </div>
-            </div>
-
-            <div class="relative overflow-hidden rounded-lg bg-white p-4 shadow space-y-4">
-              <div class="flex">
-                <div class="flex-grow-1 space-y-4">
-                  <div class="flex items-center justify-between">
-                    <div class="space-y-0.5">
-                      <p class="text-sm text-violet-500 font-medium mb-0">Brakes</p>
-                      <p class="text-2xl font-semibold text-gray-900">
-                      <% if @brakes_countdown <= 0 %>
-                      <%= 0 %>km to go</p>
-                      <% else %>
-                      <%= @brakes_countdown %>km to go</p>
-                      <% end %>
-                    </div>
-                    <div data-controller="modal" data-modal-allow-background-close="true">
-                      <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-violet-600 dark:text-violet-400 bg-violet-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-violet-400/20"
-                                            href="#">
-                                          <span class="ml-2 inline no-underline">See more</span>
-                                          <svg width="3" height="6" class="ml-3 overflow-visible text-violet-300 dark:text-violet-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                        </a>
-
-                      <!-- Modal Container -->
-                      <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-                      class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
-                        <!-- Modal Inner Container -->
-                        <div class="max-h-screen w-full max-w-lg relative">
-                          <!-- Modal Card -->
-                          <div class="m-1 bg-white rounded shadow">
-                            <div class="p-8">
-                              <h2 class="text-xl mb-4">Brakes</h2>
-                               <p class="mb-4">Keep your car safe, brakes consist of two consumable parts, brake pads and brake discs. Pads usually need replacing twice for the lifetime of a disc.</p>
-                              <p class="text-lg font-medium leading-6 text-gray-900">
-                                  <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
-                                  <%= f.error_notification %>
-                                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-                                  <%= f.hidden_field :brakes, value: @car.kilometers %>
-                                <div class="form-actions">
-                                  <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
-                                </div>
-                                <% end %> </p>
-                              <div class="flex justify-end items-center flex-wrap mt-6">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div data-controller="progress" class="bg-violet-200 rounded-full w-full"
-              data-progress-percent-value=
-              "<% if @brakes_percentage >= 100 %>
-              <%= 100 %>
-              <% else %>
-              <%= @brakes_percentage %>
-              <% end %>">
-                <div data-progress-target="bar"
-                      class="bg-violet-500 rounded-full h-2 transition-all ease-in-out"
-                      style="width: 0%; transition-duration: 2s;"></div>
-              </div>
-            </div>
-          <%# <% end %>
-        </div>
+    <div class="flex-row">
+      <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="d-flex align-content-start flex-wrap">
+        <%= f.input :kilometers %>
+        <%= f.submit class:"btn btn-primary text-white mt-4 rounded"%>
       </div>
+      <% end %>
     </div>
-  </div>
 
+    <h4 class="text-sm leading-6 text-gray-900 mb-2">Last updated: <%= "#{@car.updated_at.day}/#{@car.updated_at.month}/#{@car.updated_at.year}" %></h4>
+
+    <div class="mt-0 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="relative overflow-hidden rounded-lg bg-white p-3 shadow space-y-4">
+          <div class="flex">
+            <div class="flex-grow-1 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="space-y-0.5">
+                  <p class="text-sm text-blue-500 font-medium mb-0">Tyres</p>
+                  <p class="text-2xl font-semibold text-gray-900">
+                  <% if @tyres_countdown <= 0 %>
+                  <%= 0 %>km to go</p>
+                  <% else %>
+                  <%= @tyres_countdown %>km to go</p>
+                  <% end %>
+                </div>
+
+                <div data-controller="modal" data-modal-allow-background-close="true">
+                  <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-blue-600 dark:text-blue-400 bg-blue-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-blue-400/20" href="#">
+                    <span class="ml-2 inline no-underline">See more</span>
+                    <svg width="3" height="6" class="ml-3 overflow-visible text-blue-300 dark:text-blue-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </a>
+
+                  <!-- Modal Container -->
+                  <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+                  class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
+                    <!-- Modal Inner Container -->
+                    <div class="max-h-screen w-full max-w-lg relative">
+                      <!-- Modal Card -->
+                      <div class="m-1 bg-white rounded shadow">
+                        <div class="p-8">
+                          <h2 class="text-xl mb-4">Tyres</h2>
+                          <p class="mb-4">Remember to rotate your tyres from front to back every 10,000km. This helps keep the level of wear consistent throughout all four tyres.</p>
+                          <p class="text-lg font-medium leading-6 text-gray-900">
+                              <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
+                              <%= f.error_notification %>
+                              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                              <%= f.hidden_field :tyres, value: @car.kilometers %>
+                            <div class="form-actions">
+                              <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
+                            </div>
+                            <% end %> </p>
+                          <div class="flex justify-end items-center flex-wrap mt-6">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-controller="progress" class="bg-blue-200 rounded-full w-full"
+          data-progress-percent-value=
+          "<% if @tyres_percentage >= 100 %>
+            <%= 100 %>
+          <% else %>
+            <%= @tyres_percentage %>
+          <% end %>">
+            <div data-progress-target="bar"
+                  class="bg-blue-500 rounded-full h-2 transition-all ease-in-out"
+                  style="width: 0%; transition-duration: 2s;"></div>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg bg-white p-3 shadow space-y-4">
+          <div class="flex">
+            <div class="flex-grow-1 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="space-y-0.5">
+                  <p class="text-sm text-blue-500 font-medium mb-0">Spark Plugs & Ignition</p>
+                  <p class="text-2xl font-semibold text-gray-900">
+                  <% if @spark_plugs_and_ignition_countdown <= 0 %>
+                  <%= 0 %>km to go</p>
+                  <% else %>
+                  <%= @spark_plugs_and_ignition_countdown %>km to go</p>
+                  <% end %>
+                </div>
+
+                <div data-controller="modal" data-modal-allow-background-close="true">
+                  <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-blue-600 dark:text-blue-400 bg-blue-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-blue-400/20" href="#">
+                    <span class="ml-2 inline no-underline">See more</span>
+                    <svg width="3" height="6" class="ml-3 overflow-visible text-blue-300 dark:text-blue-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </a>
+
+                  <!-- Modal Container -->
+                  <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+                  class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
+                    <!-- Modal Inner Container -->
+                    <div class="max-h-screen w-full max-w-lg relative">
+                      <!-- Modal Card -->
+                      <div class="m-1 bg-white rounded shadow">
+                        <div class="p-8">
+                          <h2 class="text-xl mb-4">Spark Plugs & Ignition</h2>
+                          <p class="mb-4">Ignition is vital in combustion engines, keeping on top of these ensures all fuel is ignited at the optimum time - meaning better fuel efficiency!</p>
+                          <p class="text-lg font-medium leading-6 text-gray-900">
+                              <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
+                              <%= f.error_notification %>
+                              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                              <%= f.hidden_field :spark_plugs_and_ignition, value: @car.kilometers %>
+                            <div class="form-actions">
+                              <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
+                            </div>
+                            <% end %> </p>
+                          <div class="flex justify-end items-center flex-wrap mt-6">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-controller="progress" class="bg-blue-200 rounded-full w-full"
+          data-progress-percent-value=
+          "<% if @spark_plugs_and_ignition_percentage >= 100 %>
+          <%= 100 %>
+          <% else %>
+          <%= @spark_plugs_and_ignition_percentage %>
+          <% end %>">
+            <div data-progress-target="bar"
+                  class="bg-blue-500 rounded-full h-2 transition-all ease-in-out"
+                  style="width: 0%; transition-duration: 2s;"></div>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg bg-white p-3 shadow space-y-4">
+          <div class="flex">
+            <div class="flex-grow-1 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="space-y-0.5">
+                  <p class="text-sm text-blue-500 font-medium mb-0">Oil & Filters</p>
+                  <p class="text-2xl font-semibold text-gray-900">
+                  <% if @oil_and_filter_countdown <= 0 %>
+                  <%= 0 %>km to go</p>
+                  <% else %>
+                  <%= @oil_and_filter_countdown %>km to go</p>
+                  <% end %>
+                </div>
+                <div data-controller="modal" data-modal-allow-background-close="true">
+                  <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-blue-600 dark:text-blue-400 bg-blue-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-blue-400/20" href="#">
+                    <span class="ml-2 inline no-underline">See more</span>
+                    <svg width="3" height="6" class="ml-3 overflow-visible text-blue-300 dark:text-blue-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </a>
+
+                  <!-- Modal Container -->
+                  <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+                  class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
+                    <!-- Modal Inner Container -->
+                    <div class="max-h-screen w-full max-w-lg relative">
+                      <!-- Modal Card -->
+                      <div class="m-1 bg-white rounded shadow">
+                        <div class="p-8">
+                          <h2 class="text-xl mb-4">Oil & Filters</h2>
+                          <p class="mb-4">Oil lubricates the engine internals which help to prevent wear of engine components. Filters, both oil and air should be changed to relieve any build up of debris.</p>
+                          <p class="text-lg font-medium leading-6 text-gray-900">
+                              <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
+                              <%= f.error_notification %>
+                              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                              <%= f.hidden_field :oil_and_filter, value: @car.kilometers %>
+                            <div class="form-actions">
+                              <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
+                            </div>
+                            <% end %> </p>
+                          <div class="flex justify-end items-center flex-wrap mt-6">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-controller="progress" class="bg-blue-200 rounded-full w-full"
+          data-progress-percent-value=
+          "<% if @oil_and_filter_percentage >= 100 %>
+          <%= 100 %>
+          <% else %>
+          <%= @oil_and_filter_percentage %>
+          <% end %>">
+            <div data-progress-target="bar"
+                  class="bg-blue-500 rounded-full h-2 transition-all ease-in-out"
+                  style="width: 0%; transition-duration: 2s;"></div>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg bg-white p-3 shadow space-y-4">
+          <div class="flex">
+            <div class="flex-grow-1 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="space-y-0.5">
+                  <p class="text-sm text-blue-500 font-medium mb-0">Brakes</p>
+                  <p class="text-2xl font-semibold text-gray-900">
+                  <% if @brakes_countdown <= 0 %>
+                  <%= 0 %>km to go</p>
+                  <% else %>
+                  <%= @brakes_countdown %>km to go</p>
+                  <% end %>
+                </div>
+                <div data-controller="modal" data-modal-allow-background-close="true">
+                  <a data-action="click->modal#open" class="ml-3 text-xs leading-5 font-medium text-blue-600 dark:text-blue-400 bg-blue-400/10 no-underline rounded-full py-1 px-1.5 flex items-center hover:bg-blue-400/20"
+                                        href="#">
+                                      <span class="ml-2 inline no-underline">See more</span>
+                                      <svg width="3" height="6" class="ml-3 overflow-visible text-blue-300 dark:text-blue-400" aria-hidden="true"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    </a>
+
+                  <!-- Modal Container -->
+                  <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+                  class="backdrop-blur-sm hidden bg-white/50 animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center" style="z-index: 9999;">
+                    <!-- Modal Inner Container -->
+                    <div class="max-h-screen w-full max-w-lg relative">
+                      <!-- Modal Card -->
+                      <div class="m-1 bg-white rounded shadow">
+                        <div class="p-8">
+                          <h2 class="text-xl mb-4">Brakes</h2>
+                          <p class="mb-4">Keep your car safe, brakes consist of two consumable parts, brake pads and brake discs. Pads usually need replacing twice for the lifetime of a disc.</p>
+                          <p class="text-lg font-medium leading-6 text-gray-900">
+                              <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
+                              <%= f.error_notification %>
+                              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                              <%= f.hidden_field :brakes, value: @car.kilometers %>
+                            <div class="form-actions">
+                              <%= f.submit class:"btn btn-primary", data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to reset the counter?" }%>
+                            </div>
+                            <% end %> </p>
+                          <div class="flex justify-end items-center flex-wrap mt-6">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="click->modal#close">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-controller="progress" class="bg-blue-200 rounded-full w-full"
+          data-progress-percent-value=
+          "<% if @brakes_percentage >= 100 %>
+          <%= 100 %>
+          <% else %>
+          <%= @brakes_percentage %>
+          <% end %>">
+            <div data-progress-target="bar"
+                  class="bg-blue-500 rounded-full h-2 transition-all ease-in-out"
+                  style="width: 0%; transition-duration: 2s;"></div>
+          </div>
+        </div>
 </div>
