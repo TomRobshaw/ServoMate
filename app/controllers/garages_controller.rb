@@ -31,7 +31,7 @@ class GaragesController < ApplicationController
         lat: garage.latitude,
         lng: garage.longitude,
         info_window: render_to_string(partial: "info_window", locals: {garage: garage}),
-        image_url: helpers.asset_url("")
+        image_url: helpers.asset_url("003-car-jack-2.png")
       }
     end
   end

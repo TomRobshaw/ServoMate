@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+import { clippingParents } from "@popperjs/core";
 
 export default class extends Controller {
   static values = {
@@ -31,12 +32,11 @@ export default class extends Controller {
       // customMarker.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/4244/4244891.png")';
       // customMarker.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/4244/4244928.png")';
       // customMarker.style.backgroundImage = 'url("https://cdn-user-icons.flaticon.com/87203/87203389/1670387854655.svg?token=exp=1670388756~hmac=47a1ebd02b85244c1fedc2253be5a963")';
-      customMarker.style.backgroundImage = 'url("https://cdn-user-icons.flaticon.com/87203/87203389/1670388765952.svg?token=exp=1670389667~hmac=3e9038a96d7454d53dac111231d5c7ac")';
-
-
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+      // console.log(customMarker.style.backgroundImage);
       customMarker.style.width = "40px"
       customMarker.style.height = "40px"
-      customMarker.style.color = "#2a3a75"
+      // customMarker.style.color = "#2a3a75"
       customMarker.className = "marker"
       customMarker.style.backgroundSize = "contain"
       new mapboxgl.Marker(customMarker)
