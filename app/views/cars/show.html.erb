@@ -1,16 +1,17 @@
-<div class="container">
-    <div class="d-flex inline justify-content-between"><h1><%= @car.make %></h1><h3 class="mt-1"><%= @car.model%></h3><h3 class="mt-1"><%= @car.year%></h3>
-    </div>
+<div class="container space-y-8">
     <div class="image">
       <%= cl_image_tag @car.image.key, crop: :fill, class:"card-img-top" %>
     </div>
 
+    <div class="d-flex inline justify-content-between">
+      <h1><%= @car.make %> <%= @car.model%> <%= @car.year%></h1>
+    </div>
     <div class="flex-row">
       <%= simple_form_for [@car], html: { data: { action: "turbo:submit-end" }} do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <div class="d-flex align-content-start flex-wrap">
-        <%= f.input :kilometers %>
+      <div class="d-flex align-content-start flex-wrap bg-blue-100 rounded-lg p-4">
+        <%= f.input :kilometers, label: false %>
         <%= f.submit class:"btn btn-primary text-white mt-4 rounded"%>
       </div>
       <% end %>
