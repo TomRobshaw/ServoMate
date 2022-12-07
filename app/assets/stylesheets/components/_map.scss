@@ -8,3 +8,9 @@
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
 }
+
+.mapboxgl-marker{
+  svg{
+    display: none;
+  }
+}

@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1 class="h2 my-3 text-center">Garages near by 🚘</h1>
+      <%# <h1 class="h2 my-3 text-center">Garages near by 🚘</h1> %>
+      <div style="display: flex; justify-content: center;">
+        <h1>Garages near by</h1><img src="https://cdn-user-icons.flaticon.com/87203/87203389/1670388765952.svg?token=exp=1670389667~hmac=3e9038a96d7454d53dac111231d5c7ac" width="30" style="margin-left:10px;">
+      </div>
       <div>
         <%= form_with url: garages_path, method: :get, html: {class: "mb-2"} do |f| %>
               <%# <button class="btn btn-primary, color: white;"><%=link_to "Home", root_path(@root)%>

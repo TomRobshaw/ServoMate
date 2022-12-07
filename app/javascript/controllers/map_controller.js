@@ -25,7 +25,21 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      new mapboxgl.Marker()
+      const customMarker = document.createElement("div")
+      // customMarker.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/5717/5717505.png")';
+      // customMarker.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/3448/3448327.png")';
+      // customMarker.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/4244/4244891.png")';
+      // customMarker.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/4244/4244928.png")';
+      // customMarker.style.backgroundImage = 'url("https://cdn-user-icons.flaticon.com/87203/87203389/1670387854655.svg?token=exp=1670388756~hmac=47a1ebd02b85244c1fedc2253be5a963")';
+      customMarker.style.backgroundImage = 'url("https://cdn-user-icons.flaticon.com/87203/87203389/1670388765952.svg?token=exp=1670389667~hmac=3e9038a96d7454d53dac111231d5c7ac")';
+
+
+      customMarker.style.width = "40px"
+      customMarker.style.height = "40px"
+      customMarker.style.color = "#2a3a75"
+      customMarker.className = "marker"
+      customMarker.style.backgroundSize = "contain"
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)
