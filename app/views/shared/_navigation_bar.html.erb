@@ -1,0 +1,25 @@
+
+<%# Bottom Navbar %>
+
+<nav class="navigation-bar fixed-bottom">
+    <ul class="list-items">
+
+      <li class="item active">
+        <%= link_to cars_path do %>
+        <i class="fa-solid fa-car"> </i>
+        <% end %>
+      </li>
+
+      <li class="item">
+        <%= link_to garages_path do %>
+        <i class="fa-solid fa-map"> </i>
+        <% end %>
+      </li>
+
+      <li class="item">
+        <%= link_to chatroom_path(1) do %>
+        <i class="fa-solid fa-comment"> </i>
+        <% end %>
+      </li>
+    </ul>
+</nav>
