@@ -1,6 +1,5 @@
 require "open-uri"
 ServiceHistory.destroy_all
-Booking.destroy_all
 Garage.destroy_all
 Car.destroy_all
 User.destroy_all
@@ -66,7 +65,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Car Hooraah",
-  address: "14 McCrae Mews, Richmond VIC 3121",
+  address: "21 Third St, Black Rock VIC 3193",
   user: mike
 )
 
@@ -74,7 +73,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Oiled up Machanics",
-  address: "1A Gordon Grove, South Yarra VIC 3141",
+  address: "42-44 Aylesbury Dr, Altona VIC 3018",
   user: mike
 )
 
@@ -114,7 +113,7 @@ puts "garage created"
 
 @new_garage = Garage.create(
   name: "Mario Car repair",
-  address: "100 Lennox St, Richmond VIC 3121",
+  address: "1 Carey Ct, Keysborough VIC 3173",
   user: mike
 )
 
@@ -144,7 +143,6 @@ first_booking = Booking.create(
 puts "booking created"
 
 ServiceHistory.create(
-  booking: first_booking,
   service_date: "30.11.2022",
   description: "Annual service",
   car_id: 1
