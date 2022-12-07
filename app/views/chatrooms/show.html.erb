@@ -1,4 +1,3 @@
-<button class="btn btn-primary, color: white;"><%=link_to "Home", root_path(@root)%></button>
 <div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
@@ -17,6 +16,6 @@
     placeholder: "Message ##{@garage.name}",
     wrapper_html: {class: "flex-grow-1"}
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <%= f.submit "Send", class: "btn btn-primary text-white py-2 mb-3" %>
 <% end %>
 </div>
