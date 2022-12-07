@@ -1,20 +1,20 @@
-<div class="container md">
-  <h1>New Service History</h1>
+<!-- appearance-none block mt-1 w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 !outline-none focus:outline-none focus:ring-0 focus:ring-violet-200 focus:border-violet-200 sm:text-sm dark:bg-slate-600 dark:border-slate-500 dark:focus:border-slate-100 dark:text-slate-100 -->
+<div class="container max-width">
+  <h1 class="mb-6" >New Service History</h1>
 
   <%= simple_form_for [@car, @service_history] do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :service_date, as: :date %>
-      <%= f.input :description %>
+    <div class="space-y-5">
+      <%= f.input :service_date, as: :string,  input_html: { data: { controller: "flatpickr" }, class: "appearance-none block mt-1 w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 !outline-none focus:outline-none focus:ring-0 focus:ring-violet-200 focus:border-violet-200 sm:text-sm dark:bg-slate-600 dark:border-slate-500 dark:focus:border-slate-100 dark:text-slate-100" } %>
+      <%= f.input :description, placeholder: 'Enter a service summary', input_html: { class: "" } %>
       <%= f.input :image, as: :file %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.submit class:"btn btn-primary"%>
+      <%= f.button :submit %>
     </div>
 
   <%end%>
-    <div><%= link_to "Back to Service History", car_service_histories_path(@car), class:"btn btn-primary" %></div>
+    <div class="flex content-center">
+      <%= link_to "Back to Service History", car_service_histories_path(@car), class:"inline-block mx-auto mt-4 text-center underline text-gray-400 hover:text-gray-800" %>
+    </div>
 </div>

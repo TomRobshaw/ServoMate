@@ -8,6 +8,7 @@
     "@popperjs/core": "^2.11.6",
     "@rails/actioncable": "^7.0.4",
     "bootstrap": "^5.2.3",
+    "flatpickr": "^4.6.13",
     "mapbox-gl": "^2.11.0",
     "stimulus-dropdown": "^2.0.0",
     "tailwindcss-stimulus-components": "^3.0.4",
