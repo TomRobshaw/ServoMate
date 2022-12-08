@@ -1,8 +1,8 @@
 
 .navigation-bar {
-  background: #fff;
+  background: #1D293B;
   border-radius: 3px;
-  min-height:30px;
+  min-height:20px;
   min-width:200px;
   overflow: hidden;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
@@ -68,4 +68,14 @@
   bottom: 0;
   border-top: 4px solid #ff767d;
   border-radius: 30px 30px 0 0;
+}
+
+.navbar-text {
+  text-decoration: none;
+  color: #9BA3AE;
+
+}
+.navbar-link {
+  text-decoration: none;
+  color:#9BA3AE;
 }
