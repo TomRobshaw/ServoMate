@@ -1,7 +1,8 @@
 .chatroom {
   background: white;
   margin-top: 9px;
-  height: calc(100vh - 75px);
+  margin-bottom: 20px;
+  height: calc(75vh - 60px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,17 +15,19 @@
   }
 
   .messages {
-    height: 100%;
+    height: 75%;
     overflow: scroll;
     padding: 1rem;
+    background-color: blue;
   }
 
   #new_message {
     border-top: 1px solid $gray-200;
     padding: 1rem;
 
+
     .form-group {
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
   }
 }
