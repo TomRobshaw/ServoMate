@@ -14,3 +14,15 @@
     display: none;
   }
 }
+
+.mapbox-directions-instructions {
+  display: none;
+}
+
+.mapboxgl-ctrl-geocoder {
+    width: 300px !important;
+}
+
+.mapboxgl-ctrl-geocoder--icon-search{
+  display: none !important;
+}
