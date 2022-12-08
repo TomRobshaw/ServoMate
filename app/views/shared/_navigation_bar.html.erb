@@ -5,24 +5,24 @@
     <ul class="list-items mt-4">
 
       <li class="item active">
-          <%= link_to cars_path do %>
+          <%= link_to cars_path, class: "navbar-link" do %>
           <i class="fa-solid fa-car"></i>
-          <span class="navbar-text">My vehicles</span>
+          <span class="navbar-text">My Vehicles</span>
           <% end %>
 
       </li>
 
       <li class="item active">
-        <%= link_to garages_path do %>
+        <%= link_to garages_path, class: "navbar-link" do %>
         <i class="fa-solid fa-map"> </i>
-        <span class="navbar-text">Search Garage</span>
+        <span class="navbar-text">Find Garage</span>
         <% end %>
       </li>
 
       <li class="item active">
-        <%= link_to chatroom_path(1) do %>
-        <i class="fa-solid fa-comment"> </i>
-        <span class="navbar-text">Messages</span>
+        <%= link_to chatroom_path(1), class: "navbar-link" do %>
+        <i class="fa-solid fa-comment color: white;"> </i>
+        <span class="navbar-text">Chat</span>
         <% end %>
       </li>
     </ul>

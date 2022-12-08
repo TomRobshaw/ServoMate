@@ -4,6 +4,13 @@
   <div class="card-body">
       <h5 class="card title fs-3 fw-bold "><%= @garage.name %></h5>
       <p class="card-text fs-5 fw-normal text-muted" style="width: 100%; font-size: 16px; font-weight: 400; line-height: 20px; color: black;"><%= @garage.address %></p>
+      <div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
       <%= link_to "Chat with #{@garage.user.first_name}", chatroom_path(@chatroom), class: "btn btn-primary mb-4 text-white rounded"%>
       </div>
     </div>

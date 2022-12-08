@@ -23,10 +23,9 @@
   <body>
     <%= render "shared/flashes" %>
     <%= render "pages/navbar" %>
-    <div class="px-0 mx-auto py-0 max-w-md">
+    <div class="px-0 mx-auto py-0 max-w-md mb-32">
     <%= yield %>
-    <%= render "shared/navigation_bar" %>
-
     </div>
+    <%= render "shared/navigation_bar" %>
   </body>
 </html>
