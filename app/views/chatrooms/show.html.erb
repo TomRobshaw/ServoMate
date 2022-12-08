@@ -1,15 +1,17 @@
-<div class="chat-container">
-  <div class="messages-container"data-controller="chatroom-subscription"
-      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-    <div class="messages-banner"><h1><%= @garage.name %></h1></div>
+<div class="chat-container"data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+      data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+  <div class="messages-container" data-chatroom-subscription-target="messages">
+    <div class="messages-banner">
+      <div class="d-flex justify-content-start px-4 py-4">
+      <%=link_to "🡄", garages_path, class:"btn btn-primary rounded text-white mt-4 mr-4" %>
+      <h1><%= @garage.name %></h1>
+      </div>
+    </div>
     <% @chatroom.messages.each do |message| %>
       <div class="message-container">
-        <div class="message <%= (message.user_id == current_user.id) ? 'left' : 'right' %>"data-chatroom-subscription-target="messages">
-          <div class="avatar avatar-left"></div>
-          <div>
-          <%= render "messages/message", class: "content", message: message %>
-          </div>
-          <div class="avatar avatar-right"></div>
+        <div class="message <%= (message.user_id == current_user.id) ? 'left' : 'right' %>">
+            <%= render "messages/message", class: "content", message: message %>
         </div>
       </div>
     <% end %>
@@ -23,5 +25,6 @@
         %>
 
         <%= f.submit "Send", class: "button-chat" %>
-        <% end %></div>
+        <% end %>
+    </div>
 </div>
