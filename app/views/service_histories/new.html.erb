@@ -7,7 +7,7 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="space-y-5">
-      <%= f.input :service_date, as: :string,  input_html: { data: { controller: "flatpickr" }, class: "appearance-none block mt-1 w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 !outline-none focus:outline-none focus:ring-0 focus:ring-violet-200 focus:border-violet-200 sm:text-sm dark:bg-slate-600 dark:border-slate-500 dark:focus:border-slate-100 dark:text-slate-100" } %>
+      <%= f.input :service_date, as: :string,  input_html: { data: { controller: "flatpickr" }, class: "appearance-none block mt-1 w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 !outline-none focus:outline-none focus:ring-0 focus:ring-violet-200 focus:border-violet-200 sm:text-sm dark:bg-slate-600 dark:border-slate-500 dark:focus:border-slate-100 " } %>
       <%= f.input :description, placeholder: 'Enter a service summary', input_html: { class: "" } %>
       <%= f.input :image, as: :file %>
       <%= f.button :submit %>
