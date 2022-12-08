@@ -139,10 +139,14 @@ puts "garage created"
 
 puts "garage created"
 
-ServiceHistory.create(
+first_service = ServiceHistory.create(
   service_date: "30.11.2022",
   description: "Annual service",
   car_id: 1
 )
+
+file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1670454845/Screen_Shot_2022-12-06_at_8.09.05_pm_erb3g0.png")
+first_service.image.attach(io: file, filename: "Audi A3", content_type: "image/jpg")
+first_service.save
 
 puts "seeding completed"
