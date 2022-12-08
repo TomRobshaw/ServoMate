@@ -23,7 +23,7 @@
   display: inline-block;
   height: 4rem;
   width: 4.5rem;
-  line-height: 4.5;
+  line-height: 2;
   text-align: center;
   color: #acb8c1;
 }
@@ -38,6 +38,8 @@
 
 .list-items .item.active i {
   font-size: 1.4rem;
+  display: block;
+  text-decoration: none;
 }
 
 .navigation-bar .list-items .pointer {
