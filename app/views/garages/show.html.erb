@@ -1,16 +1,24 @@
-<div class="container">
-<div class style ="card" style="card-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); border-radius: 4px; border-style: solid; border-width: 4px; border-style: solid; border-color: black; display: inline-flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
-  <button class="btn btn-primary, color: white;"><%= link_to "My Vehicles", root_path(@root) %>
-  <%# <%= cl_image_tag listing.image.key, crop: :fill,  style: "width: 100%; height: 216px; border-radius: 8px;"%>
-  <div class style ="listing-info border-color: black; border-style: solid;">
-    <div class="listing-content" style ="width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
-      <p class style ="width: 100%; font-size: 24px; font-weight: 600; line-height: 20px; color: black;"><%= @garage.name %></p>
-      <p class style ="width: 100%; font-size: 16px; font-weight: 400; line-height: 20px; color: black;"><%= @garage.address %></p>
-      <%# <p class style ="width: 100%; font-size: 18px; font-weight: 400; line-height: 20px; color: black;"><h5>Chat with</h5></p> %>
-      <%= link_to "Chat with #{@garage.user.first_name}", chatroom_path(@chatroom), class: "btn btn-primary"%>
+<div class="container mt-4">
+<div class="card border border-2 p-4 bg-white rounded-4 shadow p-3 mb-2 rounded">
+  <img src="https://res.cloudinary.com/dapgryo75/image/upload/v1670472454/Workshop-21_j4wkzd.jpg" alt="this is a workshop image">
+  <div class="card-body">
+      <h5 class="card title fs-3 fw-bold "><%= @garage.name %></h5>
+      <p class="card-text fs-5 fw-normal text-muted" style="width: 100%; font-size: 16px; font-weight: 400; line-height: 20px; color: black;"><%= @garage.address %></p>
+      <%= link_to "Chat with #{@garage.user.first_name}", chatroom_path(@chatroom), class: "btn btn-primary mb-4 text-white rounded"%>
       </div>
     </div>
   </div>
 </div>
-
     <%# </div><%= link_to "chatrooms", chatrooms_path, class:"btn btn-primary btn-lg, padding-top 150px, mt-5" %><%#= @garage.user.first_name %>
+
+  <%# <button class="btn btn-primary, color: white;"><%= link_to "My Vehicles", root_path(@root) %>
+  <%# <%= cl_image_tag listing.image.key, crop: :fill,  style: "width: 100%; height: 216px; border-radius: 8px;"%>
+
+      <%# <p class style ="width: 100%; font-size: 18px; font-weight: 400; line-height: 20px; color: black;"><h5>Chat with</h5></p> %>
+
+<%# title  %>
+<%# reviews
+icon tabs
+service they offer
+location
+chat with me%>
