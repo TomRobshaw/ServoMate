@@ -2,23 +2,27 @@
 <%# Bottom Navbar %>
 
 <nav class="navigation-bar fixed-bottom">
-    <ul class="list-items">
+    <ul class="list-items mt-4">
 
       <li class="item active">
-        <%= link_to cars_path do %>
-        <i class="fa-solid fa-car"> </i>
-        <% end %>
+          <%= link_to cars_path do %>
+          <i class="fa-solid fa-car"></i>
+          <span class="navbar-text">My vehicles</span>
+          <% end %>
+
       </li>
 
-      <li class="item">
+      <li class="item active">
         <%= link_to garages_path do %>
         <i class="fa-solid fa-map"> </i>
+        <span class="navbar-text">Search Garage</span>
         <% end %>
       </li>
 
-      <li class="item">
+      <li class="item active">
         <%= link_to chatroom_path(1) do %>
         <i class="fa-solid fa-comment"> </i>
+        <span class="navbar-text">Messages</span>
         <% end %>
       </li>
     </ul>
