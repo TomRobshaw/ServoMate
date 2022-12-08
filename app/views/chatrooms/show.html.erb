@@ -1,27 +1,27 @@
-<div class="py-100">
-  <div class="container chatroom"
-    data-controller="chatroom-subscription"
-    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-  >
-
-    <h1><%= @garage.name %></h1>
-
-    <div class="messages" data-chatroom-subscription-target="messages">
-      <% @chatroom.messages.each do |message| %>
-        <%= render "messages/message", message: message %>
-      <% end %>
-    </div>
-    <div class="message input">
-      <%= simple_form_for [@chatroom, @message],
-      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
-      <%= f.input :content,
-        label: false,
-        placeholder: "Message ##{@garage.name}",
-        wrapper_html: {class: "flex-grow-1"}
-      %>
-
-      <%= f.submit "Send", class: "btn btn-primary text-white py-2 mb-3" %>
-      <% end %>
-    </div>
+<div class="chat-container">
+  <div class="messages-container"data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+    <div class="messages-banner"><h1><%= @garage.name %></h1></div>
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container">
+        <div class="message <%= (message.user_id == current_user.id) ? 'left' : 'right' %>"data-chatroom-subscription-target="messages">
+          <div class="avatar avatar-left"></div>
+          <div>
+          <%= render "messages/message", class: "content", message: message %>
+          </div>
+          <div class="avatar avatar-right"></div>
+        </div>
+      </div>
+    <% end %>
   </div>
+  <div class="form-container"> <%= simple_form_for [@chatroom, @message],
+        html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+        <%= f.input :content,
+          label: false,
+          placeholder: "Message #{@garage.name}",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+
+        <%= f.submit "Send", class: "button-chat" %>
+        <% end %></div>
 </div>

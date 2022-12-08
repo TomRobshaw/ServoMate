@@ -1,0 +1,98 @@
+.chat-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .messages-container {
+    background: rgb(203, 201, 201);
+    flex-grow: 1;
+    overflow: scroll;
+
+    .messages-banner {
+      height: 100px;
+      background: white;
+      border-bottom: 1px solid #cccccc;
+      position: sticky;
+      top: 0;
+      text-align: center;
+      h1 {
+        font-size: xx-large;
+        padding-top: 25px;
+      }
+    }
+
+    .message-container {
+      padding: 10px 20px;
+
+      .message {
+        padding: 20px;
+        border-radius: 10px;
+        background: white;
+        display: flex;
+
+        .avatar {
+          background-image:
+          url(https://ca.slack-edge.com/T02NE0241-U044M2SK67Q-d6806bbba71f-72);
+          background-size: 40px 40px;
+          height: 40px;
+          width: 40px;
+          border-radius: 20px;
+          flex-shrink: 0;
+        }
+
+        .avatar-left {
+          margin-right: 20px;
+        }
+
+        .avatar-right {
+          margin-left: 20px;
+        }
+
+        .info {
+          color: gray;
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .message.left {
+        justify-content: flex-start;
+
+        .avatar-right {
+          display: none;
+        }
+      }
+
+      .message.right {
+        justify-content: flex-end;
+
+        .avatar-left {
+          display: none;
+        }
+
+        .info,
+        .content {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .form-container {
+    flex-shrink: 0;
+  }
+
+  .button-chat {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #3484F9 ;
+    color: white;
+  }
+}
