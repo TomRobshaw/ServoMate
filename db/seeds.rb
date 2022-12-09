@@ -135,13 +135,58 @@ puts "garage created"
 puts "garage created"
 
 first_service = ServiceHistory.create(
+  service_date: "12.02.2020",
+  title: "First Service",
+  car_id: 1,
+  description: "Filters need changing soon"
+)
+
+second_service = ServiceHistory.create(
+  service_date: "26.07.2020",
+  title: "Oil and filters",
+  car_id: 1,
+  description: "Oil changed no issues"
+)
+
+third_service = ServiceHistory.create(
+  service_date: "19.05.2021",
+  title: "Annual Service",
+  car_id: 1,
+  description: " Some ignition issues, good for now"
+)
+
+forth_service = ServiceHistory.create(
+  service_date: "21.09.2021",
+  title: "Spark Plugs",
+  car_id: 1,
+  description: "Spark-plugs replaced"
+)
+
+fifth_service = ServiceHistory.create(
   service_date: "30.11.2022",
-  description: "Annual service",
-  car_id: 1
+  title: "Annual service",
+  car_id: 1,
+  description: "Running great, no problems"
 )
 
 file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1670454845/Screen_Shot_2022-12-06_at_8.09.05_pm_erb3g0.png")
 first_service.image.attach(io: file, filename: "Service History", content_type: "image/jpg")
 first_service.save
+
+file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1670454845/Screen_Shot_2022-12-06_at_8.09.05_pm_erb3g0.png")
+second_service.image.attach(io: file, filename: "Service History", content_type: "image/jpg")
+second_service.save
+
+file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1670557585/Screen_Shot_2022-12-06_at_8.25.13_pm_1_qxcuol.png")
+third_service.image.attach(io: file, filename: "Service History", content_type: "image/jpg")
+third_service.save
+
+file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1670454845/Screen_Shot_2022-12-06_at_8.09.05_pm_erb3g0.png")
+forth_service.image.attach(io: file, filename: "Service History", content_type: "image/jpg")
+forth_service.save
+
+file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1670557585/Screen_Shot_2022-12-06_at_8.25.13_pm_1_qxcuol.png")
+fifth_service.image.attach(io: file, filename: "Service History", content_type: "image/jpg")
+fifth_service.save
 
 puts "seeding completed"
