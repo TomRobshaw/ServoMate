@@ -44,8 +44,7 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
+        closeButton: false
         }).setHTML(marker.info_window)
       const customMarker = document.createElement("div")
       // customMarker.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/5717/5717505.png")';

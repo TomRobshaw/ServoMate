@@ -1,4 +1,19 @@
-<%= link_to garage do %>
-<h3><%= garage.name %></h3>
-<p><%= garage.address %></p>
+<% if false %>
+  <%= link_to garage do %>
+  <h3><%= garage.name %></h3>
+  <p><%= garage.address %></p>
+  <% end %>
 <% end %>
+
+<div class="p-1 space-y-3">
+  <div>
+    <h3 class="font-semibold text-lg"><%= link_to garage.name, garage %></h3>
+    <p class="text-xs opacity-50"><%= garage.address %></p>
+  </div>
+  <%= link_to "https://www.google.com/maps?saddr=My+Location&daddr=#{garage.latitude},#{garage.longitude}", target: "_blank", class: "inline-flex items-center justify-center space-x-2 rounded-md bg-sky-500 px-2 py-1 text-sm font-semibold leading-7 text-white shadow-sm ring-1 ring-sky-600 hover:bg-sky-600 hover:ring-sky-600 w-full" do %>
+    Get directions
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+      <path fill-rule="evenodd" d="M8.25 3.75H19.5a.75.75 0 01.75.75v11.25a.75.75 0 01-1.5 0V6.31L5.03 20.03a.75.75 0 01-1.06-1.06L17.69 5.25H8.25a.75.75 0 010-1.5z" clip-rule="evenodd" />
+    </svg>
+  <% end %>
+</div>
