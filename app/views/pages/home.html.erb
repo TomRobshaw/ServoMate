@@ -8,10 +8,11 @@
         </div>
         <% if !signed_in?%>
           <p class="max-w-md mx-auto mt-1 px-4 text-lg leading-6 text-white text-center">Keep your vehicle costs to a minimum with the easiest, most hassle free parts & service tracking app out there!</p>
+          <a href="<%= new_user_session_path %>" class="mt-4 inline-flex rounded-lg bg-sky-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-sky-600 hover:bg-sky-600 hover:ring-sky-600">Get started</a>
         <% else %>
           <p class="max-w-md mx-auto mt-1 px-4 text-lg leading-6 text-white text-center">Keep your vehicle costs to a minimum with the easiest, most hassle free parts & service tracking app out there!</p>
         <% end %>
-        <a href="#" class="mt-4 inline-flex rounded-lg bg-sky-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-sky-600 hover:bg-sky-600 hover:ring-sky-600">Get started</a>
+
       </div>
     </div>
     <div class="bg-white">
