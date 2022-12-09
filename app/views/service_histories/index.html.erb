@@ -1,10 +1,15 @@
 <div class="class text-center sm:text-left">
-    <h1>Service History</h1>
+  <div class="mt-4 mb-4">
+    <h1 class="mt-2 mb-2">Service History</h1>
+    <div>
+    <h2 class="mt-2 mb-2"><%= @car.make %></h2><h2 class="mt-2 mb-2"><%= @car.model %></h2>
+    </div>
+  </div>
 
       <hr size="2px" width="100%" color="gray">
     <div class="row justify-content-between">
-        <div class="col-4">
-          <h5 class="mb-4"> Car reciepts</h5>
+        <div class="mb-2 mt-2 text-left">
+          <h3 class="mb-4"> Car reciepts/invoices</h3>
         </div>
           <%# <div class="col-4 d-flex justify-content-end"> %>
             <%# link_to "Add Service History", new_car_service_history_path(), class:"btn btn-primary add-list btn-md mb-4" %>
@@ -38,7 +43,7 @@
                   </div>
                   <div class='flex items-center px-2 py-3'>
                     <div class='mx-3'>
-                      <button class="hover:underline"><%= h.service_date %></button>
+                      <button class="hover:underline"><%= h.service_date %> <%= h.title %></button>
                     </div>
                   </div>
                 </div>
