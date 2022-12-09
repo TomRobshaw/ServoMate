@@ -38,8 +38,7 @@
         display: flex;
 
         .avatar {
-          background-image:
-          url(https://ca.slack-edge.com/T02NE0241-U044M2SK67Q-d6806bbba71f-72);
+
           background-size: 40px 40px;
           height: 40px;
           width: 40px;
@@ -49,10 +48,16 @@
 
         .avatar-left {
           margin-right: 20px;
+          background-image:
+          url(https://ca.slack-edge.com/T02NE0241-U044M2SK67Q-d6806bbba71f-72);
+          background-size: 40px 40px;
         }
 
         .avatar-right {
           margin-left: 20px;
+          margin-right: 20px;
+          background-image:
+          url(https://res.cloudinary.com/dapgryo75/image/upload/v1670307265/user_hb6vte.png);
         }
 
         .info {
