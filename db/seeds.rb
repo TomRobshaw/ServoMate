@@ -7,13 +7,16 @@ Chatroom.destroy_all
 
 puts "seeding..."
 
-chris = User.create(
+tom = User.create(
   email: "test@email.com",
   password: "secret",
-  first_name: "Chris",
-  last_name: "Shaw",
+  first_name: "Tom",
+  last_name: "Robshaw",
   address: "10 Bridge Road, Richmond, Victoria, 3121"
 )
+file = URI.open("https://ca.slack-edge.com/T02NE0241-U044M2SK67Q-d6806bbba71f-72")
+tom.image.attach(io: file, filename: "Profile Image", content_type: "image/jpg")
+tom.save
 
 mike = User.create(
   email: "garage@email.com",
@@ -25,12 +28,12 @@ mike = User.create(
 
 puts "users created"
 
-chris_car = Car.create!(
+tom_car = Car.create!(
   make: "Audi",
   model: "A3",
   year: "2020",
   kilometers: "30000",
-  user: chris,
+  user: tom,
   tyres: "0",
   oil_and_filter: "25000",
   spark_plugs_and_ignition: "15000",
@@ -38,12 +41,12 @@ chris_car = Car.create!(
 )
 
 file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1669951944/remy-lovesy-19M7TbSch2U-unsplash_xgqmxu.jpg")
-chris_car.image.attach(io: file, filename: "Audi A3", content_type: "image/jpg")
-chris_car.save
+tom_car.image.attach(io: file, filename: "Audi A3", content_type: "image/jpg")
+tom_car.save
 
 puts "car created"
 
-new_garage2 = Garage.create(
+@new_garage = Garage.create(
   name: "Torque and Spanners",
   address: "2 Ellis St, Richmond VIC 3121",
   user: mike,
@@ -51,7 +54,7 @@ new_garage2 = Garage.create(
 
 puts "garage created"
 
-new_garage1 = Garage.create(
+@new_garage = Garage.create(
   name: "The Vroom Vroom Car Room",
   address: "88 Firebell Ln, Richmond VIC 3121",
   user: mike
@@ -108,14 +111,6 @@ puts "garage created"
 puts "garage created"
 
 @new_garage = Garage.create(
-  name: "Mind Over Motor Garage",
-  address: "29-31 North St, Richmond VIC 3121",
-  user: mike
-)
-
-puts "garage created"
-
-@new_garage = Garage.create(
   name: "Mario Car repair",
   address: "1 Carey Ct, Keysborough VIC 3173",
   user: mike
@@ -146,7 +141,7 @@ first_service = ServiceHistory.create(
 )
 
 file = URI.open("https://res.cloudinary.com/dapgryo75/image/upload/v1670454845/Screen_Shot_2022-12-06_at_8.09.05_pm_erb3g0.png")
-first_service.image.attach(io: file, filename: "Audi A3", content_type: "image/jpg")
+first_service.image.attach(io: file, filename: "Service History", content_type: "image/jpg")
 first_service.save
 
 puts "seeding completed"
