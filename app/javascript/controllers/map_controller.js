@@ -21,12 +21,12 @@ export default class extends Controller {
 
     this.map.addControl(new MapboxGeocoder ({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }));
-      this.map.addControl(
-        new MapboxDirections({
-        accessToken: mapboxgl.accessToken
-        }),
-        'bottom-left'
-        );
+      // this.map.addControl(
+        // new MapboxDirections({
+        // accessToken: mapboxgl.accessToken
+        // }),
+        // 'bottom-left'
+        // );
         this.map.addControl(
           new mapboxgl.GeolocateControl({
           positionOptions: {
