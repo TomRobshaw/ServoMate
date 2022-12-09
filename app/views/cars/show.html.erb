@@ -2,7 +2,7 @@
     <%= cl_image_tag @car.image.key, crop: :fill, class:"card-img-top" %>
   </div>
 <div class="container mb-32">
-    <div class="d-flex inline justify-content-between mt-4"><h3><%= @car.make %> <%= @car.model%> <%= @car.year%></h3>
+    <div class="d-flex inline justify-content-between mt-4"><h4><%= @car.make %> <%= @car.model%> <%= @car.year%></h4>
     </div>
 
     <div class="flex-row" style="padding: 20px; background-color: #EAEBEC; border-radius: 8px; mt-2">
@@ -16,7 +16,7 @@
       <% end %>
     </div>
 
-    <h4 class="text-sm lead text-gray-600 mb-2 mt-4">Last update: <%= "#{@car.updated_at.day}/#{@car.updated_at.month}/#{@car.updated_at.year}" %></h4>
+    <h4 class="text-md lead text-gray-600 mb-2 mt-4">Last update: <%= "#{@car.updated_at.day}/#{@car.updated_at.month}/#{@car.updated_at.year}" %></h4>
 
     <div class="mt-0 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
         <div class="relative overflow-hidden rounded-lg bg-white p-3 shadow space-y-4">
@@ -24,7 +24,7 @@
             <div class="flex-grow-1 space-y-4">
               <div class="flex items-center justify-between">
                 <div class="space-y-0.5">
-                  <p class="text-sm text-gray-600 font-medium mb-0">Tyres</p>
+                  <p class="text-sm text-blue-500 font-medium mb-0">Tyres</p>
                   <p class="text-2xl font-semibold text-gray-900">
                   <% if @tyres_countdown <= 0 %>
                   <%= 0 %>km to go</p>
